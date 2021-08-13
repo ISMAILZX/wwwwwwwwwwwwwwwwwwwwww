@@ -2,7 +2,7 @@
 
 Simple WhatsApp Bot
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Nurutomo/wabot-aq)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/andyjavadams/botwa)
 
 ## FOR TERMUX/UBUNTU/SSH USER
 
@@ -13,7 +13,7 @@ apt install nodejs -y
 apt install ffmpeg -y
 apt install imagemagick -y
 git clone https://github.com/andyjavadams/botwa
-cd 
+cd botwa
 npm install
 npm update
 ```
@@ -43,12 +43,3 @@ node index
 ```
 
 ---------
-
-
-
-
-
-
-
-
-
