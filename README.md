@@ -29,7 +29,7 @@ npm update
 
 ```bash
 git clone https://github.com/andyjavadams/botwa
-cd wabot-aq
+cd botwa
 npm install
 npm update
 ```
