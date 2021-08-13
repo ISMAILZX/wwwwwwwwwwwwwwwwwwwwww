@@ -1,4 +1,4 @@
-# wabot-aq
+# A N D Y - B O T Z
 
 Simple WhatsApp Bot
 
@@ -39,7 +39,7 @@ npm update
 ## Run
 
 ```bash
-node .
+node index
 ```
 
 ---------
@@ -145,4 +145,4 @@ conn.logger.level = 'debug'
 Powered by XTEAM | Author / Creator | Most Active Contributor | 2nd Most Active Contributor
 
 
-NOTE: This project will not maintained after `27 June 2021`, that means no update. Feel free to anyone to continue this project :)
+
