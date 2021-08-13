@@ -32,6 +32,7 @@ module.exports = {
             if (!isNumber(user.exp)) user.exp = 0
             if (!isNumber(user.limit)) user.limit = 100
             if (!isNumber(user.lastclaim)) user.lastclaim = 0
+            if (!isNumber(user.lastIstigfar)) user.lastIstigfar = 0
             if (!isNumber(user.money)) user.money = 0
             
             if (!isNumber(user.diamond)) user.diamond = 0
@@ -111,6 +112,7 @@ module.exports = {
             exp: 0,
             limit: 10,
             lastclaim: 0,
+            lastIstigfar: 0,
             money: 0,
             diamond: 0,
             iron: 0,
@@ -163,7 +165,7 @@ module.exports = {
             name: this.getName(m.sender),
             age: -1,
             regTime: -1,
-		
+            warning: 0,
             autolevelup: true,
         }
 
@@ -197,7 +199,8 @@ module.exports = {
           sPromote: '',
           sDemote: '',
           delete: false,
-        nobadword: false,
+          nobadword: false,
+          simi: false,
         nolink: false,
         novirtex: false,
         nohentai: false,
@@ -363,7 +366,7 @@ module.exports = {
 		}
 	}
 	
-	if(enable.nobadword && !m.fromMe && m.isGroup && !isAdmin && !isOwner && isBotAdmin) {
+		if(enable.nobadword && !m.fromMe && m.isGroup && !isAdmin && !isOwner && isBotAdmin) {
 	if (!m.fromMe && m.text.match(/(asadebangsat|Dakjal|anak setan|ngntd|ngentot|jancuk|kuntul|babi|kampang|kenthu|tempik|kimak|patek|kondom|bugil|seks|sex|sexy|jancok|jembut|bokep|xnxx|xxx|xvideos|xvid|jilboob|seksi|Anjing|Babi|Kunyuk|Bajingan|Bangsat|Kampret|Kontol|Memek|Ngentot|Pentil|Perek|Pepek|Pecun|Bencong|Banci|Maho|Sinting|Lonte|Hencet|Taptei|Kampang|Keparat|Bejad|Gembel|Brengsek|Taek|Anjrit|Fuck|Tetek|Ngulum|Anj|ajg|asu|aswJembut|Totong|Kolop|Pukimak|Bodat|Heang|Jancuk|Burit|Titit|Nenen|Bejat|Silit|Sempak|Fucking|Asshole|Bitch|Penis|Vagina|Klitoris|Kelentit|Borjong|Dancuk|Pantek|kondom|Teho|Bejat|Pantat|Bagudung|Babami|Kanciang|Bungul|Idiot|Kimak|Henceut|Kacuk|pukimak|Pussy|ngewe|Dick|Damn|Assu|tempek|celeng|shit|jingan|ngentot anjing ngewe|Dont use unlisted command,BAKA!breast|kontol|ngentod|colmek|alat vital|bangkinang|tits|tetek|coli|ngocok peli|ANJING!!!|kntl|ngtd|anying|amjin|sikontol|bang bros|ngocok|toket|A n j i n g|Tahi|anjass|biadap|bbii|biadab|Tomlol|dongo|dungu|anjk|bcot|BURUNG KECIL JAN SOK KERAS:V|nude|p3n1s|p3nis)/gi)) {
 		conn.updatePresence(m.chat, Presence.composing) 
 		var cBad = global.DATABASE.data.users[m.sender].warning += 1
@@ -374,7 +377,7 @@ module.exports = {
 				global.DATABASE.data.users[m.sender].warning = 0
            	 })
 			} else {
-				conn.reply(m.chat, `*⺀ BADWORD DETECTOR ⺀*\n\n*Kamu mendapat peringatan : [ ${warning} / 10 ]*\n\n*Jangan berkata kasar atau menggunakan kalimat sampah sebanyak 10x atau kamu akan dikeluarkan dari grup secara otomatis.*\n\n▌│█║▌║▌║║▌║▌║█│▌▌│█║`, m)
+				conn.reply(m.chat, `*⺀ ANTITOXIC DETECTOR ⺀*\n\n*Kamu mendapat peringatan : [ ${warning} / 10 ]*\n\n*Jangan berkata kasar atau menggunakan kalimat sampah sebanyak 10x atau kamu akan dikeluarkan dari grup secara otomatis.*\n\n▌│█║▌║▌║║▌║▌║█│▌▌│█║`, m)
 			}
 		}
 	}
