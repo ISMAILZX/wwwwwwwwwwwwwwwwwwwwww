@@ -200,7 +200,6 @@ module.exports = {
           sDemote: '',
           delete: false,
           nobadword: false,
-          simi: false,
         nolink: false,
         novirtex: false,
         nohentai: false,
