@@ -16,7 +16,7 @@ let handler = async (m, { text, usedPrefix }) => {
         m.reply(`Seri!\nkamu: ${text}\nA N D Y - B O T Z: ${astro}`)
     } else if (text == 'batu') {
         if (astro == 'gunting') {
-            global.DATABASE._data.users[m.sender].uang += 1000
+            global.DATABASE._data.users[m.sender].money += 5000
             m.reply(`Kamu menang! +5000 Money\nKamu: ${text}\nA N D Y - B O T Z: ${astro}`)
         } else {
             m.reply(`Kamu kalah!\nkamu: ${text}\nA N D Y - B O T Z: ${astro}`)
@@ -30,7 +30,7 @@ let handler = async (m, { text, usedPrefix }) => {
         }
     } else if (text == 'kertas') {
         if (astro == 'batu') {
-            global.DATABASE._data.users[m.sender].uang += 1000
+            global.DATABASE._data.users[m.sender].money += 5000
             m.reply(`Kamu menang! +5000 Money\nKamu: ${text}\nA N D Y - B O T Z: ${astro}`)
         } else {
             m.reply(`Kamu kalah!\nkamu: ${text}\nA N D Y - B O T Z: ${astro}`)
