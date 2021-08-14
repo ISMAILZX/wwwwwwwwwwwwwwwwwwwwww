@@ -23,7 +23,7 @@ let handler = async (m, { text, usedPrefix }) => {
         }
     } else if (text == 'gunting') {
         if (astro == 'kertas') {
-            global.DATABASE._data.users[m.sender].uang += 5000
+            global.DATABASE._data.users[m.sender].money += 5000
             m.reply(`Kamu menang! +5000 Money\nKamu: ${text}\nA N D Y - B O T Z: ${astro}`)
         } else {
             m.reply(`Kamu kalah!\nkamu: ${text}\nA N D Y - B O T Z: ${astro}`)
