@@ -1,44 +1,50 @@
 {
   "name": "ANDY-BOTZ",
-  "version": "1.1.1",
-  "description": "Simple WhatsApp Bot",
+  "version": "3.5.2",
+  "description": "Hooh",
+  "depecrated": false,
   "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "src": "src",
+    "plugins": "plugins"
+  },
   "scripts": {
-    "start": "node index.js --self",
+    "start": "node index.js",
     "test": "node test.js"
+  },
+  "keywords": [
+    "termux-whatsapp-bot",
+    "whatsapp-bot",
+    "whatsapp",
+    "js-whatsapp"
+  ],
+  "homepage": "https://github.com/andyjavadams/botwa",
+  "author": {
+    "name": "Andy"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andyjavadams/botwa.git"
   },
-  "keywords": [
-    "whatsapp-bot"
-  ],
-  "author": "Andy",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andyjavadams/botwa/issues"
+    "url": "https://github.com/andyjavadams/issues"
   },
-  "homepage": "https://github.com/andyjavadams/botwa",
+  "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@adiwajshing/baileys": "github:adiwajshing/baileys",
+    "@adiwajshing/baileys": "^3.5.2",
     "awesome-phonenumber": "^2.54.0",
-    "axios": "^0.21.1",
-    "brainly-scraper-v2": "^2.0.3",
-    "canvacord": "^5.2.3",
+    "brainly-scraper-v2": "^1.1.2",
     "cfonts": "^2.9.3",
     "chalk": "^4.1.1",
-    "cheerio": "^1.0.0-rc.10",
-    "emoji-api": "^1.0.2",
+    "cheerio": "^1.0.0-rc.5",
     "express": "^4.17.1",
-    "file-type": "^16.5.1",
-    "fluent-ffmpeg": "^2.1.2",
+    "file-type": "^16.5.2",
     "form-data": "^4.0.0",
     "g-i-s": "^2.1.6",
     "google-it": "^1.6.2",
     "got": "^11.8.2",
     "human-readable": "^0.2.1",
-    "img2braille": "^1.0.1",
     "jsbarcode": "^3.11.4",
     "jsdom": "^16.6.0",
     "lodash": "^4.17.21",
@@ -46,7 +52,7 @@
     "moment-timezone": "^0.5.33",
     "node-fetch": "^2.6.1",
     "node-gtts": "^2.0.2",
-    "node-webpmux": "^3.0.0",
+    "node-webpmux": "^3.1.0",
     "qrcode": "^1.4.4",
     "qrcode-terminal": "^0.12.0",
     "similarity": "^1.2.1",
