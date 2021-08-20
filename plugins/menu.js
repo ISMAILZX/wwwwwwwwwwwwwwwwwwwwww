@@ -6,7 +6,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     let package = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json')))
     let { exp, limit, money, level } = global.DATABASE.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
-    let name = conn.getName(m.sender)
+    let name = m.fromMe ? conn.user : conn.contacts[m.sender]  
     let d = new Date
     let locale = 'id'
     let gmt = new Date(0).getTime() - new Date('1 January 1970').getTime()
@@ -55,7 +55,6 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
       'job': 'ㅤJ O B - M E N U',
       'toko': 'ㅤT O K O - M E N U', 
       'primbon': 'ㅤP R I M B O N - M E N U',
-      'hadiah': 'ㅤK O D E - M E N U',
       'islam': 'ㅤI S L A M - M E N U',
       'internet': 'ㅤI N T E R N E T',
       'berita': 'ㅤB E R I T A - M E N U',
@@ -98,30 +97,27 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || `
 ❕ *INFO*  : kini bot menjual nomor OTP canada, ketik *.toko* untuk melihat produk lainnya.
-❏  *A N D Y - B O T Z* 
+
+❏  \`\`\`A N D Y - B O T Z\`\`\`
 ├
-├ N A M A : \`\`\`%name\`\`\`
-├ XP : \`\`\`${Number(exp).toLocaleString().replace(/,/g, '.')}\`\`\`
-├ M O N E Y : \`\`\`${Number(money).toLocaleString().replace(/,/g, '.')}\`\`\`
-├ L I M I T : \`\`\`${Number(limit).toLocaleString().replace(/,/g, '.')}\`\`\`
+├ N A M A : \`\`\`${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}\`\`\`
 ├ J A M : \`\`\`%time\`\`\`
 ├ T O T A L - U S E R : \`\`\`%totalreg\`\`\`
 ├ H A R I : \`\`\`%week %weton\`\`\`
 ├ T A N G G A L : \`\`\`%date\`\`\`
-├ T A N G G A L - I S L A M : \`\`\`%dateIslamic\`\`\`
+├ T G L - I S L A M : \`\`\`%dateIslamic\`\`\`
 ├ U P - T I M E - B O T : \`\`\`%uptime\`\`\`
 ├ S C - O R I : 
 ├ \`\`\`github.com/Nurutomo/wabot-aq\`\`\`
 ├ R E C O D E : \`\`\`A N D Y - O F F C\`\`\`
 ├ O W N E R : \`\`\`wa.me/6285795431803\`\`\`
 ├ 
-├ 
 └
 %readmore`
     let header = conn.menu.header || '❏ ```%category```\n'
     let body   = conn.menu.body   || '❏  *%cmd%islimit*'
     let footer = conn.menu.footer || '\n'
-    let after  = conn.menu.after  || '❏ ㅤ```T E N G S - T O``` \n\n*N U R U T O M O*\n*A N T I - B O T*\n*W I L D A N - I Z Z U D I N*\n*D R A W L - N A G*\n*A R I F F B*\n*R I F A I*'
+    let after  = conn.menu.after  || '❏ ㅤ```T E N G S - T O``` \n\n*N U R U T O M O*\n*A N T I - B O T*\n*A R I F F B*\n*W I L D A N - I Z Z U D I N*\n*D R A W L - N A G*\n\n❏ ㅤ```T E N G S - T O - T E A M``` \n\n*A N D Y × A N T I - B O T Z - O F F C*\n*A R G I O - D E V*'
     let _text  = before + '\n'
     for (let tag in groups) {
       _text += header.replace(/%category/g, tags[tag]) + '\n'
@@ -157,8 +153,8 @@ conn.reply(m.chat, text.trim(),  {
  },
  message: {
   imageMessage: {
-   caption: `*lebih bagusan epep tuh*`,
-   jpegThumbnail: fs.readFileSync(`./src/gay.jpg`)
+   caption: `*Waduh*`,
+   jpegThumbnail: fs.readFileSync(`./src/okok.jpg`)
   }
  }
 })
