@@ -331,7 +331,7 @@ module.exports = {
 				global.DATABASE.data.users[m.sender].warning = 0
            	 })
 			} else {
-				conn.reply(m.chat, `*⺀ ANTIEMOTEBATU DETECTOR ⺀*\n\n*Kamu mendapat peringatan : [ ${warning} / 10 ]*\n\n*Jangan menggunakan emote batu atau menggunakan kalimat (emote batu) sebanyak 10x atau kamu akan dikeluarkan dari grup secara otomatis.*\n\n▌│█║▌║▌║║▌║▌║█│▌▌│█║`, m)
+				conn.reply(m.chat, `*⺀ ANTIEMOTEBATU DETECTOR ⺀*\n\n*Kamu mendapat peringatan : [ ${warning} / 10 ]*\n\n*Jangan menggunakan emote batu atau menggunakan kalimat (emote batu) sebanyak 10x atau kamu akan dikeluarkan dari grup secara otomatis.*\n\nGunakan command *.maaf* untuk menghapus 1 warning\n\n ▌│█║▌║▌║║▌║▌║█│▌▌│█║`, m)
 			}
 		}
 	}
@@ -347,7 +347,7 @@ module.exports = {
 				global.DATABASE.data.users[m.sender].warning = 0
            	 })
 			} else {
-				conn.reply(m.chat, `*⺀ ANTIBUCIN DETECTOR ⺀*\n\n*Kamu mendapat peringatan : [ ${warning} / 10 ]*\n\n*Jangan Bucin karna admin iri, kalo mau bucin chat aja, kalo ngebucin sebanyak 10x kamu akan dikeluarkan dari grup secara otomatis.*\n\n▌│█║▌║▌║║▌║▌║█│▌▌│█║`, m)
+				conn.reply(m.chat, `*⺀ ANTIBUCIN DETECTOR ⺀*\n\n*Kamu mendapat peringatan : [ ${warning} / 10 ]*\n\n*Jangan Bucin karna admin iri, kalo mau bucin chat aja, kalo ngebucin sebanyak 10x kamu akan dikeluarkan dari grup secara otomatis.*\n\nGunakan command *.maaf* untuk menghapus 1 warning\n\n ▌│█║▌║▌║║▌║▌║█│▌▌│█║`, m)
 			}
 		}
 	}
@@ -363,7 +363,7 @@ module.exports = {
 				global.DATABASE.data.users[m.sender].warning = 0
            	 })
 			} else {
-				conn.reply(m.chat, `*⺀ ANTI-JAKARTA DETECTOR ⺀*\n\n*Kamu mendapat peringatan : [ ${warning} / 10 ]*\n\n*Jangan menggunakan bahasa Jakarta atau menggunakan kalimat lu/gw sebanyak 10x atau kamu akan dikeluarkan dari grup secara otomatis.*\n\n▌│█║▌║▌║║▌║▌║█│▌▌│█║`, m)
+				conn.reply(m.chat, `*⺀ ANTI-JAKARTA DETECTOR ⺀*\n\n*Kamu mendapat peringatan : [ ${warning} / 10 ]*\n\n*Jangan menggunakan bahasa Jakarta atau menggunakan kalimat lu/gw sebanyak 10x atau kamu akan dikeluarkan dari grup secara otomatis.*\n\nGunakan command *.maaf* untuk menghapus 1 warning\n\n▌│█║▌║▌║║▌║▌║█│▌▌│█║`, m)
 			}
 		}
 	}
@@ -379,7 +379,7 @@ module.exports = {
 				global.DATABASE.data.users[m.sender].warning = 0
            	 })
 			} else {
-				conn.reply(m.chat, `*⺀ ANTI-SAD DETECTOR ⺀*\n\n*Kamu mendapat peringatan : [ ${warning} / 5 ]*\n\n*Jangan kirim emoji sad sebanyak 5x atau kamu akan dikeluarkan dari grup secara otomatis.*\n\n▌│█║▌║▌║║▌║▌║█│▌▌│█║`, m)
+				conn.reply(m.chat, `*⺀ ANTI-SAD DETECTOR ⺀*\n\n*Kamu mendapat peringatan : [ ${warning} / 5 ]*\n\n*Jangan kirim emoji sad sebanyak 5x atau kamu akan dikeluarkan dari grup secara otomatis.*\n\nGunakan command *.maaf* untuk menghapus 1 warning\n\n▌│█║▌║▌║║▌║▌║█│▌▌│█║`, m)
 			}
 		}
 	}
@@ -395,7 +395,7 @@ module.exports = {
 				global.DATABASE.data.users[m.sender].warning = 0
            	 })
 			} else {
-				conn.reply(m.chat, `*⺀ ANTITOXIC DETECTOR ⺀*\n\n*Kamu mendapat peringatan : [ ${warning} / 10 ]*\n\n*Jangan berkata kasar atau menggunakan kalimat sampah sebanyak 10x atau kamu akan dikeluarkan dari grup secara otomatis.*\n\n▌│█║▌║▌║║▌║▌║█│▌▌│█║`, m)
+				conn.reply(m.chat, `*⺀ ANTITOXIC DETECTOR ⺀*\n\n*Kamu mendapat peringatan : [ ${warning} / 10 ]*\n\n*Jangan berkata kasar atau menggunakan kalimat sampah sebanyak 10x atau kamu akan dikeluarkan dari grup secara otomatis.*\n\nGunakan command *.astagfirullah* untuk menghapus 1 warning\n\n▌│█║▌║▌║║▌║▌║█│▌▌│█║`, m)
 			}
 		}
 	}
@@ -421,7 +421,7 @@ module.exports = {
 				global.DATABASE.data.users[m.sender].warning = 0
            	 })
 			} else {
-				conn.reply(m.chat, `*⺀ HENTAI DETECTOR ⺀*\n\n*Kamu mendapat peringatan : [ ${warning} / 10 ]*\n\n*Jangan Kirim kode hentai sebanyak 10x atau kamu akan dikeluarkan dari grup secara otomatis.*\n\n▌│█║▌║▌║║▌║▌║█│▌▌│█║`, m)
+				conn.reply(m.chat, `*⺀ HENTAI DETECTOR ⺀*\n\n*Kamu mendapat peringatan : [ ${warning} / 10 ]*\n\n*Jangan Kirim kode hentai sebanyak 10x atau kamu akan dikeluarkan dari grup secara otomatis.*\n\nGunakan command *.maaf* untuk menghapus 1 warning\n\n▌│█║▌║▌║║▌║▌║█│▌▌│█║`, m)
 			}
 		}
 	}
