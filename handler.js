@@ -39,6 +39,7 @@ module.exports = {
             if (!isNumber(user.iron)) user.iron = 0
 
             if (!isNumber(user.common)) user.common = 0
+            if (!isNumber(user.warning)) user.warning = 0
             if (!isNumber(user.uncommon)) user.uncommon = 0
             if (!isNumber(user.mythic)) user.mythic = 0
             if (!isNumber(user.legendary)) user.legendary = 0
@@ -188,6 +189,7 @@ module.exports = {
         if (!('nolinktiktok' in chat)) chat.nolinktiktok = false
         if (!('nohoax' in chat)) chat.nohoax = false
         if (!('nohentai' in chat)) chat.nohentai = false
+        if (!('nobucin' in chat)) chat.nobucin = false
         if (!('nokuotafree' in chat)) chat.nokuotafree = false
         if (!('noemotebatu' in chat)) chat.noemotebatu = false
         } else global.DATABASE._data.chats[m.chat] = {
@@ -204,6 +206,7 @@ module.exports = {
         novirtex: false,
         nohentai: false,
         nohoax: false,
+        nobucin: false,
         nospam: false,
         nokuotafree: false,
         nojakarta: false,
@@ -333,6 +336,22 @@ module.exports = {
 		}
 	}
 	
+		if(enable.nobucin && !m.fromMe && m.isGroup && !isAdmin && !isOwner && isBotAdmin) {
+	if (!m.fromMe && m.text.match(/(beb|Beb|yank|yang|sayang|syg|syang|beby|baby|Yang|Sayang|Syg|Beby|by|By|Baby|😍|😘|🥰|😗|😙|😚|😻)/gi)) {
+		conn.updatePresence(m.chat, Presence.composing) 
+		var cBad = global.DATABASE.data.users[m.sender].warning += 1
+		var warning = global.DATABASE.data.users[m.sender].warning
+			if(warning > 9) {
+				conn.reply(m.chat, `*Kabanyakan bucin, kick aja lah!!!*`, m).then(() => {
+				conn.groupRemove(m.chat, [m.sender])
+				global.DATABASE.data.users[m.sender].warning = 0
+           	 })
+			} else {
+				conn.reply(m.chat, `*⺀ ANTIBUCIN DETECTOR ⺀*\n\n*Kamu mendapat peringatan : [ ${warning} / 10 ]*\n\n*Jangan Bucin karna admin iri, kalo mau bucin chat aja, kalo ngebucin sebanyak 10x kamu akan dikeluarkan dari grup secara otomatis.*\n\n▌│█║▌║▌║║▌║▌║█│▌▌│█║`, m)
+			}
+		}
+	}
+	
 	if(enable.nojakarta && !m.fromMe && m.isGroup && !isAdmin && !isOwner && isBotAdmin) {
 	if (!m.fromMe && m.text.match(/(Lu|lu|gw|Gw|Gue|Gua|gue|gua)/gi)) {
 		conn.updatePresence(m.chat, Presence.composing) 
@@ -368,7 +387,7 @@ module.exports = {
 		if(enable.nobadword && !m.fromMe && m.isGroup && !isAdmin && !isOwner && isBotAdmin) {
 	if (!m.fromMe && m.text.match(/(asadebangsat|Dakjal|anak setan|ngntd|ngentot|jancuk|kuntul|babi|kampang|kenthu|tempik|kimak|patek|kondom|bugil|seks|sex|sexy|jancok|jembut|bokep|xnxx|xxx|xvideos|xvid|jilboob|seksi|Anjing|Babi|Kunyuk|Bajingan|Bangsat|Kampret|Kontol|Memek|Ngentot|Pentil|Perek|Pepek|Pecun|Bencong|Banci|Maho|Sinting|Lonte|Hencet|Taptei|Kampang|Keparat|Bejad|Gembel|Brengsek|Taek|Anjrit|Fuck|Tetek|Ngulum|Anj|ajg|asu|aswJembut|Totong|Kolop|Pukimak|Bodat|Heang|Jancuk|Burit|Titit|Nenen|Bejat|Silit|Sempak|Fucking|Asshole|Bitch|Penis|Vagina|Klitoris|Kelentit|Borjong|Dancuk|Pantek|kondom|Teho|Bejat|Pantat|Bagudung|Babami|Kanciang|Bungul|Idiot|Kimak|Henceut|Kacuk|pukimak|Pussy|ngewe|Dick|Damn|Assu|tempek|celeng|shit|jingan|ngentot anjing ngewe|Dont use unlisted command,BAKA!breast|kontol|ngentod|colmek|alat vital|bangkinang|tits|tetek|coli|ngocok peli|ANJING!!!|kntl|ngtd|anying|amjin|sikontol|bang bros|ngocok|toket|A n j i n g|Tahi|anjass|biadap|bbii|biadab|Tomlol|dongo|dungu|anjk|bcot|BURUNG KECIL JAN SOK KERAS:V|nude|p3n1s|p3nis)/gi)) {
 		conn.updatePresence(m.chat, Presence.composing) 
-		var cBad = global.DATABASE.data.users[m.sender].warning += 1
+		var cBad = global.DATABASE.data.users[m.sender]. warning += 1
 		var warning = global.DATABASE.data.users[m.sender].warning
 			if(warning > 9) {
 				conn.reply(m.chat, `*Over badword!*`, m).then(() => {
