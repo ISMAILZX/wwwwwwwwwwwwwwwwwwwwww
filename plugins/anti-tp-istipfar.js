@@ -3,12 +3,12 @@ let handler = async (m, { isPrems, usedPrefix, command }) => {
     if (user.warning == 0) throw 'Kamu tidak memiliki warning!'
 
     let waktu = user.lastIstigfar + 180000
-    if (new Date - user.lastIstigfar < 180000) throw `Perasaan pas warning nya 0 gaperna istighfar, kalo mau istighfar lagi, tunggu ${msToTime(waktu - new Date())}`
+    if (new Date - user.lastIstigfar < 180000) throw `Perasaan pas warning nya 0 gaperna minta maaf, kalo mau minta maaf lagi, tunggu ${msToTime(waktu - new Date())}`
     user.warning -= 1
     m.reply(`Warning kamu berkurang menjadi *${user.warning} / 10*`)
     user.lastIstigfar = new Date * 1
 }
-handler.command = /^astagh?fir(ullah)?$/i
+handler.command = /^maaf|maap$/i
 
 handler.limit = true
 
