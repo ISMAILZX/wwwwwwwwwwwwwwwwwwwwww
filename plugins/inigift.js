@@ -1,23 +1,12 @@
-let handler = async m => m.reply(`
-╭─「 BUY KODE RANDOM 」
-│ 
-│ > Keterangan :
-│• Fitur Kode Random adalah fitur kode yang berisi
-│hadiah! Anda bisa mendapatkan Uang
-│sepuasnya! Hingga masa berlaku kode randomnya habis!
-│
-│ > Harga :
-│• 5K / Minggu (7 Hari)
-│  > NOTE: Jika Tidak Mau Membeli, 
-│Anda Dapat Mendapatkannya Dengan Chat
-│Di wa.me/6285795431803?text=Bang+mau+dapet+kode+random+free
-│
-│
-│ > Pembayaran :
-│• Pulsa (INDOSAT) :
-│+6285795431803
-╰────
-`.trim()) // Tambah sendiri kalo mau
+//let handler = async m => m.reply(`
+//Gada keuntungan nya bang, mending premium aja:v
+//`.trim()) // Tambah sendiri kalo mau
+const { MessageType } = require("@adiwajshing/baileys")
+let handler = async (m, { conn, usedPrefix }) => {
+let beli = `Gada keuntungan nya bang, mending premium aja:v`.trim()
+
+await conn.send2Button(m.chat, beli.trim(), '© A N D Y - B O T Z', 'Goprem', '.goprem', 'Okelah', '.ndak', { sendEphemeral: true, quoted: m })}
+
 handler.help = ['belikode']
 handler.tags = ['hadiah']
 handler.command = /^(belikode)$/i

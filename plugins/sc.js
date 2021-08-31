@@ -1,6 +1,9 @@
 let handler  = async (m, { conn, usedPrefix: _p }) => {
 let info = `
-https://github.com/Nurutomo/wabot-aq
+Base : https://github.com/Nurutomo/wabot-aq
+Game - adventure : https://github.com/botstylee/botstylee/
+Button cmd : https://github.com/ariffb25/stikerinbot
+Keseluruhan fitur bot : https://github.com/andyjavadams/botwa
 `.trim()
 
 conn.fakeReply(m.chat, info, '0@s.whatsapp.net', '*ini bang*', 'status@broadcast')
