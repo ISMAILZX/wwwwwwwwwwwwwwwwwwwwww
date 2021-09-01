@@ -16,6 +16,7 @@ handler.help = ['random <kode>']
 handler.tags = ['hadiah']
 handler.command = /^(random)$/i
 handler.premium = true
+handler.private = true
 
 handler.limit = false
 
