@@ -52,23 +52,6 @@ let text = `
 
 let mentionedJid = [who]
    await conn.send2ButtonLoc(m.chat, await (await fetch(thumb)).buffer(), text.trim(), '© A N D Y - B O T Z', 'Menu', `.huh`, 'Owner', `.owner`, m, true, { sendEphemeral: true })
-
-// await conn.send2ButtonImg(m.chat, text.trim(), "./src/logo.jpg", "© A N D Y - B O T Z", 'Menu', '.huh', 'Owner', '.owner', { quoted: freply, sendEphemeral: true, contextInfo: { mentionedJid: conn.parseMention(text), forwardingScore: 135, isForwarded: true }})
- 
- 
-//await conn.send3Button(m.chat, text.trim(), '© A N D Y - B O T Z', 'Menu', '.hah', 'Owner', '.owner', 'Donasi', '.donasi')
-//const buttons = [
- // {buttonId: '.hah', buttonText: {displayText: 'Menu'}, type: 1},
-//  {buttonId: '/donasi', buttonText: {displayText: 'Donasi'}, type: 1},
- // {buttonId: '/owner', buttonText: {displayText: 'Owner'}, type: 1}
-//]
-//const buttonMessage = {
-   // contentText: text.trim(),
-   // footerText: '© A N D Y - B O T Z',
-  //  buttons: buttons,
-   // headerType: 1 // change for file type // change for file type
-//}
-//const sendMsg = await conn.sendMessage(m.chat, buttonMessage, MessageType.buttonsMessage)
 }
 handler.command = /^(menu|help)$/i
 handler.owner = false
