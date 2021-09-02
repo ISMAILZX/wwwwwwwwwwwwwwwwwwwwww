@@ -1,6 +1,8 @@
+const fetch = require('node-fetch')
+const { MessageType,Presence } = require('@adiwajshing/baileys')
+const { sticker } = require('./lib/sticker')
 let util = require('util')
 let simple = require('./lib/simple')
-let { MessageType, Presence } = require('@adiwajshing/baileys')
 
 const isNumber = x => typeof x === 'number' && !isNaN(x)
 const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(resolve, ms))
@@ -27,6 +29,7 @@ module.exports = {
         if (typeof user !== 'object') global.DATABASE._data.users[m.sender] = {}
         if (user) {
             if (!isNumber(user.healt)) user.healt = 0
+            if (!isNumber(user.as)) user.as = 0
             if (!isNumber(user.level)) user.level = 0
             if (!user.role) user.role = 'Beginner'
             if (!isNumber(user.exp)) user.exp = 0
@@ -98,6 +101,35 @@ module.exports = {
                 if (!isNumber(user.age)) user.age = -1
                 if (!isNumber(user.regTime)) user.regTime = -1
             }
+            
+//BERBURU DATABASE GAME
+			if (!isNumber(user.paus)) user.paus = 0
+     if (!isNumber(user.kepiting)) user.kepiting = 0
+     if (!isNumber(user.gurita)) user.gurita = 0
+     if (!isNumber(user.cumi)) user.cumi= 0
+     if (!isNumber(user.buntal)) user.buntal = 0
+     if (!isNumber(user.dory)) user.dory = 0
+     if (!isNumber(user.lumba)) user.lumba = 0
+     if (!isNumber(user.lobster)) user.lobster = 0
+     if (!isNumber(user.hiu)) user.hiu = 0
+     if (!isNumber(user.udang)) user.udang = 0
+     if (!isNumber(user.ikan)) user.ikan = 0
+     if (!isNumber(user.orca)) user.orca = 0
+        
+        if (!isNumber(user.banteng)) user.banteng = 0
+     if (!isNumber(user.harimau)) user.harimau = 0
+     if (!isNumber(user.gajah)) user.gajah = 0
+     if (!isNumber(user.kambing)) user.kambing = 0
+     if (!isNumber(user.panda)) user.panda = 0
+     if (!isNumber(user.buaya)) user.buaya = 0
+     if (!isNumber(user.kerbau)) user.kerbau = 0
+     if (!isNumber(user.sapi)) user.sapi = 0
+     if (!isNumber(user.monyet)) user.monyet = 0
+     if (!isNumber(user.babihutan)) user.babihutan = 0
+     if (!isNumber(user.babi)) user.babi = 0
+     if (!isNumber(user.ayam)) user.ayam = 0
+     
+     
             if (!('autolevelup' in user)) user.autolevelup = true
             
          /*   if (!user.registered) {
@@ -114,6 +146,31 @@ module.exports = {
             limit: 10,
             lastclaim: 0,
             lastIstigfar: 0,
+                 as: 0,
+    paus: 0,
+    kepiting: 0,
+    gurita: 0,
+    cumi: 0,
+    buntal: 0,
+    dory: 0,
+    lumba: 0,
+    lobster: 0,
+    hiu: 0,
+    udang: 0,
+    ikan: 0,
+    orca: 0,
+    banteng: 0,
+    harimau: 0,
+    gajah: 0,
+    kambing: 0,
+    panda: 0,
+    buaya: 0,
+    kerbau : 0,
+    sapi: 0,
+    monyet : 0,
+    babihutan: 0,
+    babi: 0,
+    ayam: 0,
             money: 0,
             diamond: 0,
             iron: 0,
@@ -352,6 +409,11 @@ module.exports = {
 		}
 	}
 	
+	if (!m.fromMe && m.text.match(/(6282164659362)/gi)) {
+stiker = await sticker(false, "https://telegra.ph/file/dfee29786ff4c524443c2.png", "ANDY-BOTZ", "Ngetag lagi saya benet")
+        await conn.sendMessage(m.chat, stiker, MessageType.sticker, { sendEphemeral: true, quoted: m })
+	}
+	
 	if(enable.nojakarta && !m.fromMe && m.isGroup && !isAdmin && !isOwner && isBotAdmin) {
 	if (!m.fromMe && m.text.match(/(Lu|lu|gw|Gw|Gue|Gua|gue|gua)/gi)) {
 		conn.updatePresence(m.chat, Presence.composing) 
@@ -444,7 +506,7 @@ module.exports = {
 	
 if (!m.fromMe && m.text.match(/(terimakasih|makasih|tq|thanks|tengs|tengkyu|mks|mksih)/gi)) {
 	    conn.updatePresence(m.chat, Presence.recording)
-	    conn.sendFile(m.chat, 'src/makasih.opus', 'tts.opus', null, m, true)
+	    conn.sendFile(m.chat, 'src/masama.opus', 'tts.opus', null, m, true)
 	}
 	
 if (!m.fromMe && m.text.match(/(desah|mendesah|yamete)/gi)) {
