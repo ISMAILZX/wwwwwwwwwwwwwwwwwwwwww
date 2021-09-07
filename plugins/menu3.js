@@ -1,3 +1,4 @@
+// ga tau males pengen hapus github
 let { MessageType, mentionedJid } = require('@adiwajshing/baileys')
 let fetch = require('node-fetch')
 let fs = require ('fs')
@@ -5,22 +6,7 @@ let moment = require ('moment-timezone')
 let handler = async (m, { conn, usedPrefix }) => {
 let name = m.fromMe ? conn.user : conn.contacts[m.sender]  
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-//let { nama } = global.DATABASE.data.users[who]
-//let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-//tonst freply = {
-  //key : {
-  //participant: '0@s.whatsapp.net',
-//  remoteJid: 'status@broadcast'
-// },
-// message: {
-  //imageMessage: {
-   //: `*Keren pamrah*`,
-   //jpegThumbnail: fs.readFileSync(`./src/alfita.jpg`)
-  //}
- //}
-//}
-let thumb = 'https://telegra.ph/file/76baada40eccc99dd3c25.jpg' // upload foto mu, terus masukin url nya disini
-const freply = {
+ const freply = {
 key: {
 			fromMe: false,
 			participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "6285795431803@s.whatsapp.net" } : {})
@@ -32,7 +18,7 @@ key: {
 						"mimetype": "image/jpeg",
 						"jpegThumbnail": fs.readFileSync(`./src/okok.jpg`) //Gambarnye
 					},
-					"title": "ANDY-BOTZ", //Kasih namalu 
+					"title": "ANDY-BOTZ", //Kasih namamu
 					"description": "© ANDY-OFFC", 
 					"currencyCode": "USD",
 					"priceAmount1000": "6850000",
@@ -43,6 +29,7 @@ key: {
 		}
 	}
 }
+
 let { limit, exp, money, lastclaim, registered, regTime, role, age, level } = global.DATABASE.data.users[m.sender]
 let text = `
 \`\`\`Hi, ${ucapan()} ${ucapin()} @${who.replace(/@.+/, '')} ✨\`\`\`
@@ -50,8 +37,7 @@ let text = `
 \`\`\`NOTE - BOT TIDAK AKAN MERESPON DI DALAM GRUP JIKA PESAN SEMENTARA TIDAK DIMATIKAN.\`\`\`
 `.trim()
 
-let mentionedJid = [who]
-   await conn.send2ButtonLoc(m.chat, await (await fetch(thumb)).buffer(), text.trim(), '© A N D Y - B O T Z', 'Menu', `.hah`, 'Owner', `.owner`, m, true, { sendEphemeral: true })
+ await conn.send2ButtonImg(m.chat, text.trim(), `./src/logo.jpg`, "© A N D Y - B O T Z", 'Menu', '.huh', 'Owner', '.owner', { quoted: freply, sendEphemeral: true, contextInfo: { mentionedJid: conn.parseMention(text), forwardingScore: 135, isForwarded: true }})
 }
 handler.command = /^(menu|help)$/i
 handler.owner = false
@@ -97,6 +83,23 @@ function ucapin() {
     }
     if (time >= 18) {
         res = "🌉"
+    }
+    return res
+}
+function umcap() {
+    const time = moment.tz('Asia/Jakarta').format('HH')
+    res = "Dimni hamri"
+    if (time >= 4) {
+        res = "pamgi beb"
+    }
+    if (time > 10) {
+        res = "simyang beban"
+    }
+    if (time >= 15) {
+        res = "somre syg"
+    }
+    if (time >= 18) {
+        res = "mamlem by"
     }
     return res
 }
