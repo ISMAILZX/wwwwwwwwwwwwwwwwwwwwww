@@ -37,7 +37,7 @@ let text = `
 \`\`\`NOTE - BOT TIDAK AKAN MERESPON DI DALAM GRUP JIKA PESAN SEMENTARA TIDAK DIMATIKAN.\`\`\`
 `.trim()
 
- await conn.send2ButtonImg(m.chat, text.trim(), `./src/logo.jpg`, "© A N D Y - B O T Z", 'Menu', '.huh', 'Owner', '.owner', { quoted: freply, sendEphemeral: true, contextInfo: { mentionedJid: conn.parseMention(text), forwardingScore: 135, isForwarded: true }})
+ await conn.send2ButtonImg(m.chat, text.trim(), `./src/logo.jpg`, "© A N D Y - B O T Z", 'Menu', '.hah', 'Owner', '.owner', { quoted: freply, sendEphemeral: true, contextInfo: { mentionedJid: conn.parseMention(text), forwardingScore: 135, isForwarded: true }})
 }
 handler.command = /^(menu|help)$/i
 handler.owner = false
