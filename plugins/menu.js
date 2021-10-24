@@ -1,12 +1,50 @@
 let fs = require ('fs')
 let path = require('path')
+let fetch = require('node-fetch')
+let moment = require ('moment-timezone')
+let PhoneNumber = require('awesome-phonenumber')
 let levelling = require('../lib/levelling')
 let handler  = async (m, { conn, usedPrefix: _p }) => {
+let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   try {
     let package = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json')))
-    let { exp, limit, money, level } = global.DATABASE.data.users[m.sender]
+    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+    let { exp, limit, level, role, age, money, registered, healt, coin, tigame } = global.DATABASE.data.users[m.sender]
+const wib = moment.tz('Asia/Jakarta').format("HH:mm:ss")
+const wita = moment.tz('Asia/Makassar').format("HH:mm:ss")
+const wit = moment.tz('Asia/Jayapura').format("HH:mm:ss")
+     let name = m.fromMe ? conn.user : conn.contacts[m.sender] 
+     let oy = `Hi @${who.replace(/@.+/, '')}`
+    const fvideo = {
+	 key: { 
+          fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "6285795431803-1625305606@g.us" } : {}) 
+                },
+	 message: { 
+                 "videoMessage": { 
+                 "title":"hallo bang",
+                 "h": `Hmm`,
+                 'seconds': `${pickRandom(['17818','6651','9123','1246','2241','613'])}`, 
+                 'caption': `*Halo* ${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}, *${ucapan()}* *${ucapin()}*,  ${pickRandom(['*Gimana kabarnya?*','*Lagi apa?*', '*Baik² aja kan?*','*sekolah sana*'])}`,
+                 'jpegThumbnail': fs.readFileSync(`${pickRandom(['./src/alfita.jpg','./src/fita.jpg','./src/fitacans.jpg','./src/okok.jpg','./src/xixi.jpg'])}`)
+                        }
+                       }
+	                  }
+/* const freply = {
+	key: {
+  participant: '0@s.whatsapp.net',
+  remoteJid: 'status@broadcast'
+ },
+ message: {
+  imageMessage: {
+   caption: `*Hamlo, ${ucapan()} ${ucapin()}*`,
+   jpegThumbnail: fs.readFileSync(`./src/fitacans.jpg`)
+  }
+ }
+} */
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
-    let name = m.fromMe ? conn.user : conn.contacts[m.sender]  
+  //  let name = m.fromMe ? conn.user : conn.contacts[m.sender]  
     let d = new Date
     let locale = 'id'
     let gmt = new Date(0).getTime() - new Date('1 January 1970').getTime()
@@ -45,6 +83,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
       'absen': 'ㅤA B S E N - M E N U',
       'game': 'ㅤG A M E',
       'rpg': 'ㅤR P G',
+      'berburu': 'ㅤR P G - V 2',
       'xp': 'ㅤU A N G & L I M I T',
       'sticker': 'ㅤS T I C K E R',
       'kerang': 'ㅤK E R A N G - A J A I B',
@@ -54,11 +93,14 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
       'anime': 'ㅤW I B U - M E N U',
       'job': 'ㅤJ O B - M E N U',
       'toko': 'ㅤT O K O - M E N U', 
+      'dewasa': 'ㅤ1 8 + - M E N U', 
       'primbon': 'ㅤP R I M B O N - M E N U',
       'islam': 'ㅤI S L A M - M E N U',
       'internet': 'ㅤI N T E R N E T',
       'berita': 'ㅤB E R I T A - M E N U',
       'nulis': 'ㅤM A K E R - M E N U',
+      'ph': 'ㅤP H O T O O X Y - M E N U',
+      'ep': 'ㅤE P H O T O - M E N U',
       'serti': 'ㅤS E R T I - M E N U',
       'apk': 'ㅤA P K - M O D',
       'expression': 'ㅤE X P R E S S I O N',
@@ -98,32 +140,54 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     let before = conn.menu.before || `
 ❕ *INFO*  : kini bot menjual nomor OTP canada, ketik *.toko* untuk melihat produk lainnya.
 
-❏  \`\`\`A N D Y - B O T Z\`\`\`
-├
-├ N A M A : \`\`\`${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}\`\`\`
-├ J A M : \`\`\`%time\`\`\`
-├ T O T A L - U S E R : \`\`\`%totalreg\`\`\`
-├ H A R I : \`\`\`%week %weton\`\`\`
-├ T A N G G A L : \`\`\`%date\`\`\`
-├ T G L - I S L A M : \`\`\`%dateIslamic\`\`\`
-├ U P - T I M E - B O T : \`\`\`%uptime\`\`\`
-├ S C - O R I : 
-├ \`\`\`github.com/Nurutomo/wabot-aq\`\`\`
-├ R E C O D E : \`\`\`A N D Y - O F F C\`\`\`
-├ O W N E R : \`\`\`wa.me/6285795431803\`\`\`
-├ 
-└
+         \`\`\`${oy} 🌹\`\`\`
+
+┌─「 I N F O - B O T Z 」
+├ BOT NAME : *ANDY-BOTZ*
+├ VERSION : *6.8.1*
+├ TOTAL USER : *%totalreg*
+├ UPTIME : *%uptime*
+├ BATTERY : ${conn.battery ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Lagi di cas' : '⚡ Engga di cas'}` : 'Unknown'}
+├ PREFIX :*「 MULTI BANG 」*
+├ SC ORI : 
+├ *github.com/Nurutomo/wabot-aq*
+├ RECODE : *andyjavadams*
+└─
+
+┌─「 I N F O - K A M U 」
+├ NAMA : *${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}*
+├ NOMOR TELEPON : *https://wa.me/${who.split`@`[0]}*
+├ REGISTER : *${registered ? 'Yes': 'No'}*
+├ ROLE : *${role}*
+├ HEALTH : *${healt}*
+├ MONEY : *${money}*
+├ LIMIT : *${limit}*
+├ LEVEL: *${level}*
+├ XP : *${exp}*
+└─
+
+┌─「 L O C A L - T I M E 」
+├ ${wib} *WIB*
+├ ${wita} *WITA*
+├ ${wit} *WIT*
+└─
+
+┌─「 I N F O - D A T E 」
+├ HARI : *%week %weton*
+├ TANGGAL ; *%date*
+├ TGL ISLAM : *%dateIslamic*
+└──────────────────────
 %readmore`
     let header = conn.menu.header || '❏ ```%category```\n'
-    let body   = conn.menu.body   || '❏  *%cmd%islimit*'
-    let footer = conn.menu.footer || '\n'
-    let after  = conn.menu.after  || '❏ ㅤ```T E N G S - T O``` \n\n*N U R U T O M O*\n*A N T I - B O T*\n*A N D Y - B O T Z*\n*A R I F F B*\n*W I L D A N - I Z Z U D I N*\n*D R A W L - N A G*\n\n❏ ㅤ```T E N G S - T O - T E A M``` \n\n*A N D Y × A N T I - B O T Z - O F F C*\n*A R G I O - D E V*'
+    let body   = conn.menu.body   || '├> *%cmd%islimit*'
+    let footer = conn.menu.footer || '└─\n'
+    let after  = conn.menu.after  || '❏ ㅤ```T E N G S - T O``` \n\n*N U R U T O M O*\n*A N T I - B O T*\n*A R I F F B*\n*W I L D A N - I Z Z U D I N*\n*D R A W L - N A G*\n\n❏ ㅤ```T E N G S - T O - T E A M``` \n\n*K E L U A R G A - B E S A R - A N D Y*\n*A N D Y × A N T I - B O T Z - O F F C*\n*A R G I O - D E V*'
     let _text  = before + '\n'
     for (let tag in groups) {
       _text += header.replace(/%category/g, tags[tag]) + '\n'
       for (let menu of groups[tag]) {
         for (let help of menu.help)
-          _text += body.replace(/%cmd/g, menu.prefix ? help : '%p' + help).replace(/%islimit/g, menu.limit ? ' (Limit)' : '')  + '\n'
+          _text += body.replace(/%cmd/g, menu.prefix ? help : '%p' + help).replace(/%islimit/g, menu.limit ? '( Pake Limit )' : '')  + '\n'
       }
       _text += footer + '\n'
     }
@@ -146,25 +210,40 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => ''+replace[name])
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => ''+replace[name])
 conn.fakeReply(m.chat, `tak loading, sek yh!!!`, '0@s.whatsapp.net','*Hadehhhhhhh*')
-conn.reply(m.chat, text.trim(),  {
- key: {
-  participant: '0@s.whatsapp.net',
-  remoteJid: 'status@broadcast'
- },
- message: {
-  imageMessage: {
-   caption: `*Waduh*`,
-   jpegThumbnail: fs.readFileSync(`./src/okok.jpg`)
-  }
- }
-})
+await conn.send2ButtonImg(m.chat, text.trim(), `./src/hehe.jpg`, "© A N D Y - B O T Z", 'Donasi', '.ds', 'Script Bot', '.sc', { quoted: fvideo, sendEphemeral: true, contextInfo: { mentionedJid: conn.parseMention(text), forwardingScore: 135,                 isForwarded: true ,"externalAdReply": {
+          "title": `${pickRandom(['palpale','awokwkwkw','awikwok','duk tak duk'])}`,
+          "body": `${pickRandom(['follow bang','© andyjavadams','Kok bisa bang','Waduh bang','Pencet lah'])}`,
+          "mediaType": "1",
+          "thumbnailUrl": `${pickRandom(['https://telegra.ph/file/6e33a92a7917a6da614c8.png','https://telegra.ph/file/4d55bd6548fe15f3929e8.png','https://telegra.ph/file/358bd1243061f415225e2.png','https://telegra.ph/file/8208c148ab682cf7bd12a.png'])}`,
+          "mediaUrl": `${pickRandom(['https://instagram.com/andy.official08_','https://instagram.com/andybotz.official_','https://github.com/andyjavadams','https://wa.me/6285795431803?text=Sv+bang'])}`,
+     //     "thumbnail": "https://i.ibb.co/ysTv8wY/Screenshot-20210808-112316.png",
+         "sourceUrl": `${pickRandom(['https://instagram.com/andy.official08_','https://instagram.com/andybotz.official_','https://github.com/andyjavadams','https://wa.me/6285795431803?text=Sv+bang'])}`,
+           }}})
+/* await conn.send2ButtonImg(m.chat, text.trim(), './src/hehe.jpg', '© A N D Y - B O T Z', 'Donasi', '.ds', 'Script Bot', '.sc', 'conversation', { sendEphemeral: true, quoted: fvideo, contextInfo : { mentionedJid: conn.parseMention(text), forwardingScore: 135,
+                isForwarded: true ,"externalAdReply": {
+          "title": `${pickRandom(['palpale','awokwkwkwkw','awikwok','duk tak duk'])}`,
+          "body": `${pickRandom(['follow bang','© andyjavadams','Pencet lah'])}`,
+          "mediaType": "1",
+          "thumbnailUrl": `${pickRandom(['https://telegra.ph/file/6e33a92a7917a6da614c8.png','https://telegra.ph/file/4d55bd6548fe15f3929e8.png','https://telegra.ph/file/358bd1243061f415225e2.png','https://telegra.ph/file/8208c148ab682cf7bd12a.png'])}`,
+          "mediaUrl": `${pickRandom(['https://instagram.com/andy.official08_','https://instagram.com/andybotz.official_','https://github.com/andyjavadams','https://wa.me/6285795431803?text=Sv+bang'])}`,
+     //     "thumbnail": "https://i.ibb.co/ysTv8wY/Screenshot-20210808-112316.png",
+         "sourceUrl": `${pickRandom(['https://instagram.com/andy.official08_','https://instagram.com/andybotz.official_','https://github.com/andyjavadams','https://wa.me/6285795431803?text=Sv+bang'])}`,
+           }}}) */
+/* await conn.sendMessage(m.chat, text.trim(),'conversation',{quoted: fvideo, contextInfo:{"externalAdReply": {
+          "title": "Bwang",
+          "body": "YouTube Play Audio",
+          "mediaType": 2,
+          "thumbnailUrl": "https://telegra.ph/file/e5c6b574aeeaa53c43679.jpg",
+          "mediaUrl": "https://youtu.be/iuJDhFRDx9M",
+          "thumbnail": ""
+}}}) */
 
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
   }
 }
-handler.command = /^hah$/i
+handler.command = /^huh$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
@@ -188,5 +267,40 @@ function clockString(ms) {
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [h, m, s].map(v => v.toString().padStart(2, 0) ).join(':')
 }
-
-
+function ucapan() {
+    const time = moment.tz('Asia/Jakarta').format('HH')
+    res = "Selamat dini hari"
+    if (time >= 4) {
+        res = "Selamat pagi"
+    }
+    if (time > 10) {
+        res = "Selamat siang"
+    }
+    if (time >= 15) {
+        res = "Selamat sore"
+    }
+    if (time >= 18) {
+        res = "Selamat malam"
+    }
+    return res
+}
+function ucapin() {
+    const time = moment.tz('Asia/Jakarta').format('HH')
+    res = "🌃"
+    if (time >= 4) {
+        res = "🌄"
+    }
+    if (time > 10) {
+        res = "☀️"
+    }
+    if (time >= 15) {
+        res = "🌆"
+    }
+    if (time >= 18) {
+        res = "🌉"
+    }
+    return res
+}
+function pickRandom(list) {
+    return list[Math.floor(Math.random() * list.length)]
+}

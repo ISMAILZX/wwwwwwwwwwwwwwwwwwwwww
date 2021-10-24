@@ -15,8 +15,9 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
         if (args.length < 1) return conn.reply(m.chat, usedPrefix + 'judi <jumlah>\n ' + usedPrefix + 'judi 1000', m)
         if (global.DATABASE._data.users[m.sender].money >= count * 1) {
             global.DATABASE._data.users[m.sender].money -= count * 1
+//await conn.send2Button(m.chat, "Jangan judi, karna itu bisa membuatmu miskin!!!, confirm di bawah untuk melanjutkan", '© A N D Y - B O T Z', 'Iya', `.jumdi ${count}`, 'Engga', '.ndak', { sendEphemeral: true, quoted: m })
             await m.reply('*Jangan judi gk bakal menang!!, kalau gk percaya gpp*') //Kwkwwkkwlwlw
-            if (Aku > Kamu) {
+             if (Aku > Kamu) {
                 conn.reply(m.chat, `aku roll:${Aku}\nKamu roll: ${Kamu}\n\nkamu *Kalah*, kamu kehilangan ${count} Money`.trim(), m)
             } else if (Aku < Kamu) {
                 global.DATABASE._data.users[m.sender].money += count * 2
@@ -41,7 +42,7 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
     
 handler.help = ['judi <jumlah>']
 handler.tags = ['rpg']
-handler.command = /^(judi)$/i
+handler.command = /^(judi|jumdi)$/i
 
 handler.fail = null
 

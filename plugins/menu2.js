@@ -1,7 +1,7 @@
 let { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn, participants, args }) => {
      const rows = [
-        {title: 'menu', description: "saya pengen lihat", rowId:".hah"},
+        {title: 'menu', description: "saya pengen lihat", rowId:".huh"},
         {title: 'owner', description: "Owner nya siapa?", rowId:"/qw"},
         {title: 'toko', description: "cek toko", rowId:"/tkk"},
         {title: 'donasi', description: "saya mau donasi", rowId:"/ds"},

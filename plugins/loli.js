@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
      let handler  = async (m, { conn, args }) => {
     heum = await fetch(`https://recoders-area.caliph.repl.co/api/loli`)
-    json = await heum.buffer()
+    json = await heum.buffer())
    conn.sendFile(m.chat, json, 'nulis', 'Lomlinya kak', m, false)
 }
 handler.help = ['loli']

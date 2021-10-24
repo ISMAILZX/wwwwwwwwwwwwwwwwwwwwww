@@ -43,42 +43,42 @@ let handler = async (m, { conn, usedPrefix }) => {
     let userslegendary = sortedlegendary.map(v => v[0])
     let str = `
 Inventory *${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}*\n
-Health: *${healt}*
-Armor: *${armor == 0 ? 'Tidak Punya' : '' || armor == 1 ? 'Leather Armor' : '' || armor == 2 ? 'Iron Armor' : '' || armor == 3 ? 'Gold Armor' : '' || armor == 4 ? 'Diamond Armor' : '' || armor == 5 ? 'Netherite Armor' : ''}*\n
-Money: *${money}*
-Level: *${level}*
-Exp: *${exp}*\n
-*Inventory*
-Diamond: *${diamond}*
-Potion: *${potion}*
-Sampah: *${sampah}*
-Makanan Pet: *${makananpet}*
-Total inv: *${diamond + potion + sampah + makananpet}* item\n
-*Crate*
-Common: *${common}*
-Uncommon: *${uncommon}*
-Mythic: *${mythic}*
-Legendary: *${legendary}*
-Pet: *${pet}*\n
-*Pet*
-Kuda: *${kuda == 0 ? 'Tidak Punya' : '' || kuda == 1 ? 'Level 1' : '' || kuda == 2 ? 'Level 2' : '' || kuda == 3 ? 'Level 3' : '' || kuda == 4 ? 'Level 4' : '' || kuda == 5 ? 'Level MAX' : ''}*
-Rubah: *${rubah == 0 ? 'Tidak Punya' : '' || rubah == 1 ? 'Level 1' : '' || rubah == 2 ? 'Level 2' : '' || rubah == 3 ? 'Level 3' : '' || rubah == 4 ? 'Level 4' : '' || rubah == 5 ? 'Level MAX' : ''}*
-Kucing: *${kucing == 0 ? 'Tidak Punya' : '' || kucing == 1 ? 'Level 1' : '' || kucing == 2 ? 'Level 2' : '' || kucing == 3 ? 'Level 3' : '' || kucing == 4 ? 'Level 4' : '' || kucing == 5 ? 'Level MAX' : ''}*\n\n
-*Proges*\n
-╭────────────────
-│Level *${level}* To Level *${level}*
-│Exp *${exp}* -> *${max}*
-╰────────────────
-╭────────────────
-│Rubah ${rubah == 0 ? 'Tidak Punya' : '' || rubah > 0 && rubah < 5 ? `Level *${rubah}* To level *${rubah + 1}*\n│Exp *${_rubah}* -> *${rubah *100}*` : '' || rubah == 5 ? '*Max Level*' : ''}
-╰────────────────
-╭────────────────
-│Kucing ${kucing == 0 ? 'Tidak Punya' : '' || kucing > 0 && kucing < 5 ? `Level *${kucing}* To level *${kucing + 1}*\n│Exp *${_kucing}* -> *${kucing *100}*` : '' || kucing == 5 ? '*Max Level*' : ''}
-╰────────────────
-╭────────────────
-│Kuda ${kuda == 0 ? 'Tidak Punya' : '' || kuda > 0 && kuda < 5 ? `Level *${kuda}* To level *${kuda + 1}*\n│Exp *${_kuda}* -> *${kuda *100}*` : '' || kuda == 5 ? '*Max Level*' : ''}
-╰────────────────\n\n
-*achievement*
+💉 Health: *${healt}*
+🛡️ Armor: *${armor == 0 ? 'Tidak Punya' : '' || armor == 1 ? 'Leather Armor' : '' || armor == 2 ? 'Iron Armor' : '' || armor == 3 ? 'Gold Armor' : '' || armor == 4 ? 'Diamond Armor' : '' || armor == 5 ? 'Netherite Armor' : ''}*\n
+💰 Money: *${money}*
+📊 Level: *${level}*
+💴 Exp: *${exp}*\n
+📈 *Inventory*
+💎 Diamond: *${diamond}*
+💉 Potion: *${potion}*
+🗑️ Sampah: *${sampah}*
+🍖 Makanan Pet: *${makananpet}*
+📝 Total inv: *${diamond + potion + sampah + makananpet}* item\n
+🎁 *Crate*
+🎁 Common: *${common}*
+🎁 Uncommon: *${uncommon}*
+🎁 Mythic: *${mythic}*
+🎁 Legendary: *${legendary}*
+🎁 Pet: *${pet}*\n
+🔔 *Pet*
+🐎 Kuda: *${kuda == 0 ? 'Tidak Punya' : '' || kuda == 1 ? 'Level 1' : '' || kuda == 2 ? 'Level 2' : '' || kuda == 3 ? 'Level 3' : '' || kuda == 4 ? 'Level 4' : '' || kuda == 5 ? 'Level MAX' : ''}*
+🦊 Rubah: *${rubah == 0 ? 'Tidak Punya' : '' || rubah == 1 ? 'Level 1' : '' || rubah == 2 ? 'Level 2' : '' || rubah == 3 ? 'Level 3' : '' || rubah == 4 ? 'Level 4' : '' || rubah == 5 ? 'Level MAX' : ''}*
+🐈 Kucing: *${kucing == 0 ? 'Tidak Punya' : '' || kucing == 1 ? 'Level 1' : '' || kucing == 2 ? 'Level 2' : '' || kucing == 3 ? 'Level 3' : '' || kucing == 4 ? 'Level 4' : '' || kucing == 5 ? 'Level MAX' : ''}*\n\n
+📈 *Proges*\n
+
+📊 Level *${level}* To Level *${level}*
+💴 Exp *${exp}* -> *${max}*
+
+
+🦊 Rubah ${rubah == 0 ? 'Tidak Punya' : '' || rubah > 0 && rubah < 5 ? `Level *${rubah}* To level *${rubah + 1}*\n=> Exp *${_rubah}* -> *${rubah *100}*` : '' || rubah == 5 ? '*Max Level*' : ''}
+
+
+🐈 Kucing ${kucing == 0 ? 'Tidak Punya' : '' || kucing > 0 && kucing < 5 ? `Level *${kucing}* To level *${kucing + 1}*\n=> Exp *${_kucing}* -> *${kucing *100}*` : '' || kucing == 5 ? '*Max Level*' : ''}
+
+
+🐎 Kuda ${kuda == 0 ? 'Tidak Punya' : '' || kuda > 0 && kuda < 5 ? `Level *${kuda}* To level *${kuda + 1}*\n=> Exp *${_kuda}* -> *${kuda *100}*` : '' || kuda == 5 ? '*Max Level*' : ''}
+\n\n
+🥇 *achievement*
 1.Top level *${userslevel.indexOf(m.sender) + 1}* dari *${userslevel.length}*
 2.Top Money *${usersmoney.indexOf(m.sender) + 1}* dari *${usersmoney.length}*
 3.Top Diamond *${usersdiamond.indexOf(m.sender) + 1}* dari *${usersdiamond.length}*

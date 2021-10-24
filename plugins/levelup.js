@@ -1,6 +1,7 @@
 let levelling = require('../lib/levelling')
 
 let handler = m => {
+ let name = conn.getName(m.sender)
   let user = global.DATABASE._data.users[m.sender]
   if (!levelling.canLevelUp(user.level, user.exp, global.multiplier)) {
     let { min, xp, max } = levelling.xpRange(user.level, global.multiplier)
@@ -13,9 +14,9 @@ Kurang *${max - user.exp}* lagi!
 	while (levelling.canLevelUp(user.level, user.exp, global.multiplier)) user.level++
 	if (before !== user.level) {
 	          m.reply(`
-Congratulation, you are now level *${user.level}*!
+Wis ada yg naik level nih ke level *${user.level}*, selamat ya *${name}*
 	`.trim())
-	      }
+      }
 }
 
 handler.help = ['levelup']
