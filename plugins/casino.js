@@ -25,7 +25,7 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                 global.DATABASE._data.users[m.sender].exp += count * 1
                 conn.reply(m.chat, `💰 Casino 💰\n*Kamu:* ${Kamu} Point\n*Computer:* ${Aku} Point\n\n*SERI*\nKamu mendapatkan ${count * 1} Uang(xp)`.trim(), m)
             }
-        } else conn.reply(m.chat, `Uang(xp) kamu tidak mencukupi untuk Casino silahkan *#kerja* terlebih dahulu!`.trim(), m)
+        } else conn.reply(m.chat, `Uang(xp) kamu tidak mencukupi untuk Casino silahkan *Mainkan game* terlebih dahulu!`.trim(), m)
     } catch (e) {
         console.log(e)
         m.reply('Error!!')
