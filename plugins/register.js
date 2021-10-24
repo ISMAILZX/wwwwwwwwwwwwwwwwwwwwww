@@ -3,7 +3,7 @@ let Reg = /(.*)([.|])([0-9]*)$/i
 let handler = async function (m, { text, usedPrefix }) {
   let user = global.DATABASE._data.users[m.sender]
   if (user.registered === true) throw `Anda sudah terdaftar\nMau daftar ulang? ${usedPrefix}unreg <SN|SERIAL NUMBER>`
-  if (!Reg.test(text)) throw `Format salah\n*${usedPrefix}daftar <nama>.umur>*`
+  if (!Reg.test(text)) throw `Format salah! Contoh\n*${usedPrefix}daftar andy.19*`
   let [_, name, splitter, age] = text.match(Reg)
   if (!name) throw 'Nama tidak boleh kosong (Alphanumeric)'
   if (!age) throw 'Umur tidak boleh kosong (Angka)'
@@ -13,11 +13,10 @@ let handler = async function (m, { text, usedPrefix }) {
   user.registered = true
   let sn = createHash('md5').update(m.sender).digest('hex')
   m.reply(`
-Daftar berhasil!
-
+Ok, selamat daftar berhasil!
 ╭─「 Info 」
 │ Nama: ${name}
-│ Umur: ${age}thn
+│ Umur: ${age} Tahun
 │ SN: ${sn}
 ╰────
 `.trim())
