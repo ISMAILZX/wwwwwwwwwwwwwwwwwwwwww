@@ -2,19 +2,19 @@ let { Presence, GroupSettingChange } = require('@adiwajshing/baileys')
 let handler  = async (m, { conn, args, usedPrefix, command }) => {
 	if(!args || !args[0]) {
 		await conn.updatePresence(m.chat, Presence.composing) 
-		conn.reply(m.chat, `*Format salah! Contoh :*\n\n	*○ ${usedPrefix + command} close*\n	*○ ${usedPrefix + command} open*`, m)
-	} else if(args[0] == 'open') {
+			conn.send2Button(m.chat, 'Hayoloh', '© A N D Y - B O T Z', 'buka grupnya', '.group andybaek', 'tutup grupnya', '.group andyjeleg',m)
+	} else if(args[0] == 'andybaek') {
 		conn.groupSettingChange(m.chat, GroupSettingChange.messageSend, false)
-	} else if(args[0] == 'close') {
+	} else if(args[0] == 'andyjeleg') {
 		conn.groupSettingChange(m.chat, GroupSettingChange.messageSend, true)
 	} else {
 		await conn.updatePresence(m.chat, Presence.composing) 
-		conn.reply(m.chat, `*Format salah! Contoh :*\n\n	*○ ${usedPrefix + command} close*\n	*○ ${usedPrefix + command} open*`, m)
+		conn.send2Button(m.chat, 'Hayoloh', '© A N D Y - B O T Z', 'buka grupnya', '.group andybaek', 'tutup grupnya', '.group andyjeleg',m)
 	} 
 }
-handler.help = ['group *open / close*']
+handler.help = ['group','grup']
 handler.tags = ['group']
-handler.command = /^(group)$/i
+handler.command = /^(group|grup)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

@@ -14,10 +14,11 @@ let ohh
 Imni pp nya @${who.replace(/@.+/, '')}
 `.trim()
 let mentionedJid = [who]
-    conn.sendFile(m.chat, pp, 'pp.jpg', str, m, false, { quoted: m, sendEphemeral: true, contextInfo: { mentionedJid, forwardingScore: 135, isForwarded: true }})
+    conn.sendFile(m.chat, pp, 'pp.jpg', str, m, false, { quoted: m, thumbnail: Buffer.alloc[0], sendEphemeral: true, contextInfo: { mentionedJid, forwardingScore: 135, isForwarded: true }})
   }
 }
 handler.help = ['getpp @user']
 handler.tags = ['tools']
+handler.group = true
 handler.command = /^getpp$/i
 module.exports = handler

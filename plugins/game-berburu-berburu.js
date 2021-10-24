@@ -84,19 +84,19 @@ setTimeout(() => {
                      }, 20000) 
                
                      setTimeout(() => {
-                     m.reply(`*DUAR*`)
+                     m.reply(`Nah ini dia`)
                       }, 18000)
                     
                      setTimeout(() => {
-                     m.reply('NGIOONG')
+                     m.reply('......')
                      }, 15000) 
                     
                      setTimeout(() => {
-                     m.reply('PIW PIW PIW')
+                     m.reply('Dapet nih')
                      }, 14000) 
                      
                      setTimeout(() => {
-                     m.reply('_Sedang Berburu..._')
+                     m.reply('Sedang mencari mangsa...')
                      }, 0) 
   user.as = new Date * 1
     } else conn.sendMessage(m.chat, buttonMessage, MessageType.buttonsMessage ,m )
