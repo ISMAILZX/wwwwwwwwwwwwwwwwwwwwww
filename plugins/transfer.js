@@ -4,7 +4,7 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
         return conn.reply(m.chat, `Gunakan format ${usedPrefix}transfer <type> <jumlah> <@tag>\ncontoh penggunaan: *${usedPrefix}transfer money 100 @tag*`.trim(), m)
     } else try {
         let type = (args[0] || '').toLowerCase()
-        let count = args[1] && args[1].length > 0 ? Math.min(9999999, Math.max(parseInt(args[1]), 1)) : Math.min(1)
+        let count = args[1] && args[1].length > 0 ? Math.min(99999999999999999999999999999999999999999999, Math.max(parseInt(args[1]), 1)) : Math.min(1) //mwehehe
         let who = m.mentionedJid ? m.mentionedJid[0] : (args[2].replace(/[@ .+-]/g, '').replace(' ', '') + '@s.whatsapp.net')
         if(!m.mentionedJid || !args[2]) throw 'Tag salah satu, atau ketik Nomernya!!'
         let users = global.DATABASE._data.users

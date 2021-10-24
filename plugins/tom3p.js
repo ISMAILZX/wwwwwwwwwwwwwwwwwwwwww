@@ -12,7 +12,7 @@ let handler = async (m, { conn, args }) => {
         const owgi = await conn.downloadAndSaveMediaMessage(ger)
         let text = args.join` `
         let rano = getRandom('.mp3')
-                                    exec(`ffmpeg -i ${owgi} -filter_complex "vibrato=f=10" ${rano}`, (err, stderr, stdout) => {
+        exec(`ffmpeg -i ${owgi} ${rano}`, (err) => {
             fs.unlinkSync(owgi)
             if (err) return m.reply('emror..')
             nobg = fs.readFileSync(rano)
@@ -20,15 +20,16 @@ let handler = async (m, { conn, args }) => {
             fs.unlinkSync(rano)
         })
     } else {
-        m.reply('pastikan format audio!')
+        m.reply('pastikan format mp3!!')
     }
 }
 
-handler.help = ['vibra (caption|reply media)']
-handler.tags = ['sound']
-handler.command = /^vibra$/i
+handler.help = ['topp2 (caption|reply media)']
+handler.tags = ['so']
+handler.command = /^topp2$/i
 module.exports = handler
 
 
 const getRandom = (ext) => {
 	return `${Math.floor(Math.random() * 10000)}${ext}`}
+	

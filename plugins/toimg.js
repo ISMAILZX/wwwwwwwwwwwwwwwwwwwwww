@@ -16,7 +16,7 @@ let handler  = async (m, { conn }) => {
     im.stdin.end()
     im.on('exit', () => {
       conn.sendMessage(m.chat, Buffer.concat(bufs), MessageType.image, {
-        quoted: m
+        quoted: m, caption: 'Nih kak'
       })
     })
   }
