@@ -10,7 +10,7 @@ Artinya: "Sesungguhnya Allah mempunyai sembilan puluh sembilan nama, alias serat
 }
 handler.help = ['asmaulhusna']
 handler.tags = ['islam']
-handler.command = /^(asmaulhusna)$/i
+handler.command = /^(asmaulhusnjjjhhjjcffsssdfha)$/i
 module.exports = handler
 
 global.asmaulhusna = {

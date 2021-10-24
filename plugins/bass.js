@@ -1,4 +1,3 @@
-const imgbb = require('imgbb-uploader')
 const fs = require('fs')
 const { exec } = require('child_process')
 const { MessageType } = require('@adiwajshing/baileys')
