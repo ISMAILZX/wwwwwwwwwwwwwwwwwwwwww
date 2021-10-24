@@ -101,6 +101,7 @@ const wit = moment.tz('Asia/Jayapura').format("HH:mm:ss")
       'nulis': 'ㅤM A K E R - M E N U',
       'ph': 'ㅤP H O T O O X Y - M E N U',
       'ep': 'ㅤE P H O T O - M E N U',
+      'te' : 'ㅤT E X T - P R O - M E N U',
       'serti': 'ㅤS E R T I - M E N U',
       'apk': 'ㅤA P K - M O D',
       'expression': 'ㅤE X P R E S S I O N',
