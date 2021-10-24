@@ -131,11 +131,11 @@ const fgclink = {
 	},
 	"message": {
 		"groupInviteMessage": {
-			"groupJid": "6282331033919-1625305606@g.us",
-			"inviteCode": "mememteeeekkeke",
-			"groupName": "Mengter", 
-            "caption": "Halo bang jagoo", 
-            'jpegThumbnail': fs.readFileSync('./src/logobot.jpg')
+			"groupJid": "6285795431803-1625305606@g.us",
+			"inviteCode": "OkeBang",
+			"groupName": "ANDY X ANTI BOTZ OFFICIAL", 
+            "caption": "Jomin", 
+            'jpegThumbnail': fs.readFileSync('./src/fitacans.jpg')
 		}
 	}
 }

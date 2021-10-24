@@ -1,6 +1,8 @@
 let os = require('os')
 let util = require('util')
 let { performance } = require('perf_hooks')
+let fs = require("fs")
+let path = require('path')
 let { sizeFormatter } = require('human-readable')
 let format = sizeFormatter({
   std: 'JEDEC', // 'SI' (default) | 'IEC' | 'JEDEC'
@@ -9,6 +11,11 @@ let format = sizeFormatter({
   render: (literal, symbol) => `${literal} ${symbol}B`,
 })
 let handler = async (m, { conn }) => {
+let package = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json')))
+  let _uptime = process.uptime() * 1000
+  let uptime = clockString(_uptime) 
+  let totalreg = Object.keys(global.DATABASE._data.users).length
+
   const chats = conn.chats.all()
   const groups = chats.filter(v => v.jid.endsWith('g.us'))
   const groupsIn = groups.filter(v => !v.read_only)
@@ -37,19 +44,29 @@ let handler = async (m, { conn }) => {
       irq: 0
     }
   })
-  let old = performance.now()
-  await m.reply('Bntr kak')
-  let neww = performance.now()
+  let old = Math.round(performance.now())
+  await m.reply("wait")
+  let neww = Math.round(performance.now())
   let speed = neww - old
-  m.reply(`
-Merespon dalam ${speed} millidetik
-
+  let txt = `
+  
 💬 Status :
+- *${speed}* ms
 - *${groups.length}* Group Chats
 - *${groupsIn.length}* Groups Joined
 - *${groups.length - groupsIn.length}* Groups Left
 - *${chats.length - groups.length}* Personal Chats
 - *${chats.length}* Total Chats
+
+🛤️ *donasi & Request* :
+
+ TELKOMSEL [082331033919]
+ DANA [082331033919]
+ Saweria [https://saweria.co/nightsleep1]
+
+ Request? ${package.bugs.url}
+ officiall Group *${conn.getName(conn.user.jid)}* :
+ *Group* : https://tinyurl.com/masukbang
 
 📱 *Phone Info* :
 ${'```' + `
@@ -68,10 +85,19 @@ ${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type =>
 
 _CPU Core(s) Usage (${cpus.length} Core CPU)_
 ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
-`.trim())
+`.trim()
+  m.reply(txt)
 }
-handler.help = ['info']
+handler.help = ['ping', 'speed']
 handler.tags = ['info', 'tools']
 
-handler.command = /^(in|info)$/i
+handler.command = /^(wip)$/i
 module.exports = handler
+
+function clockString(ms) {
+  let h = Math.floor(ms / 3600000)
+  let m = Math.floor(ms / 60000) % 60
+  let s = Math.floor(ms / 1000) % 60
+  console.log({ms,h,m,s})
+  return [h, m, s].map(v => v.toString().padStart(2, 0) ).join(':')
+}
