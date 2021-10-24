@@ -787,10 +787,10 @@ Untuk mematikan fitur ini, ketik
 
 global.dfail = (type, m, conn) => {
   let msg = {
-    rowner: 'Bntr bang, saya lagi sibuk',
-    owner: 'Hayoloh mau ngapain, kata fita ndak bole',
+    rowner: 'ga boleh bang, kalo gitu lagi saya benet',
+    owner: 'ga boleh bang, kalo gitu lagi saya benet',
     mods: 'Hayoloh mau ngapain, kata fita ndak bole',
-    premium: 'Perintah ini hanya dapat di gunakan oleh user *premium* \nMau daftar premium? ketik *.goprem*',
+    premium: 'Perintah ini hanya dapat di gunakan oleh user *premium* \n\nMau daftar premium? ketik *.goprem*',
     group: 'Harus didalam grup sayang',
     private: 'Chat pribadi aja sayang',
     admin: 'Jadi admin dulu, baru bisa pake fitur ini sayang',
