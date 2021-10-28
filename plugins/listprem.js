@@ -1,16 +1,10 @@
-/*
-   Silahkan Di Pakek
-   Tapi Bantu Rapihin :v
-   Buatan: Miaweers
-*/
-
-const { MessageType } = require('@adiwajshing/baileys')
-
-let handler = async (m, { conn, text }) => {
-  let prem = global.prems.map(v => v.replace(/[^0-9]/g, '')  + '@s.whatsapp.net').filter(v => v != conn.user.jid)
-conn.sendMessage(m.chat, `「 List Premium 」` + `\n` + prem.map(v => '- @' + v.replace(/@.+/, '')).join`\n`, MessageType.extendedText, { contextInfo: { mentionedJid: prem } })
+let fs = require('fs')
+let handler = async (m, { conn, isOwner }) => {
+  let prem = global.prems.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)
+  conn.reply(m.chat, `┌〔 Daftar Pengguna Premium 〕` + `\n` + prem.map(v => isOwner ? '├ @' + v.replace(/@.+/, '') : '│ ' + conn.getName(v)).join`\n` + '\n└────', m, { contextInfo: { mentionedJid: prem } })
 }
-handler.command = /^(listprem)$/i
-handler.owner = true
+handler.help = ['premlist']
+handler.tags = ['owner']
+handler.command = /^(listprem|premlist)$/i
 
 module.exports = handler
