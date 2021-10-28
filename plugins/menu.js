@@ -183,7 +183,7 @@ const wit = moment.tz('Asia/Jayapura').format("HH:mm:ss")
     let header = conn.menu.header || '❏ ```%category```\n'
     let body   = conn.menu.body   || '├> *%cmd%islimit*'
     let footer = conn.menu.footer || '└─\n'
-    let after  = conn.menu.after  || '❏ ㅤ```T E N G S - T O``` \n\n*N U R U T O M O*\n*A N D Y - J S*A N T I - B O T*\n*A R I F F B*\n*W I L D A N - I Z Z U D I N*\n*D R A W L - N A G*\n\n❏ ㅤ```T E N G S - T O - T E A M``` \n\n*K E L U A R G A - B E S A R - A N D Y*\n*A N D Y × A N T I - B O T Z - O F F C*\n*A R G I O - D E V*'
+    let after  = conn.menu.after  || '❏ ㅤ```T E N G S - T O``` \n\n*N U R U T O M O*\n*A N D Y - J S*\n*A N T I - B O T*\n*A R I F F B*\n*W I L D A N - I Z Z U D I N*\n*D R A W L - N A G*\n\n❏ ㅤ```T E N G S - T O - T E A M``` \n\n*K E L U A R G A - B E S A R - A N D Y*\n*A N D Y × A N T I - B O T Z - O F F C*\n*A R G I O - D E V*'
     let _text  = before + '\n'
     for (let tag in groups) {
       _text += header.replace(/%category/g, tags[tag]) + '\n'
