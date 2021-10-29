@@ -82,7 +82,6 @@ const wit = moment.tz('Asia/Jayapura').format("HH:mm:ss")
       'main': 'ㅤM A I N',
       'absen': 'ㅤA B S E N - M E N U',
       'game': 'ㅤG A M E',
-      'jadian': 'ㅤP A C A R A N - M E N U',
       'rpg': 'ㅤR P G',
       'berburu': 'ㅤR P G - V 2',
       'xp': 'ㅤU A N G & L I M I T',
