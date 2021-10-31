@@ -4,7 +4,7 @@ const { sticker } = require('../lib/sticker')
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 //    if (!text) throw `contoh:\n${usedPrefix + command} Rey|MAYSHI`
     let [nama1, nama2] = text.split(/[&|.]/i)
-    if (!nama1 || !nama2) throw `gunakan command seperti ini\ncontoh:\n${usedPrefix + command} Benniismael|Susi Susanti`
+    if (!nama1 || !nama2) throw `gunakan command seperti ini\ncontoh:\n${usedPrefix + command} Namamu|Nama doimu`
 
     let res = await fetch(global.API('zeks', '/api/primbonjodoh', { nama1, nama2 }, 'apikey'))
     if (res.status != 200) throw await `${res.status} ${res.statusText}`
