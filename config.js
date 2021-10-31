@@ -12,7 +12,7 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
-  'https://api.xteam.xyz': 'faisalkey',
+  'https://api.xteam.xyz': 'ya beli',
   'https://api.zeks.xyz': 'apivinz',
 }
 
