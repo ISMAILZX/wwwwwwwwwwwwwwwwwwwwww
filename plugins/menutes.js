@@ -47,7 +47,7 @@ const buttonMessage = {
     imageMessage: media.message.imageMessage // change for file type
 }
 
-const andy = await conn.sendMessage(m.chat, buttonMessage, MessageType.buttonsMessage,  { quoted: freply, sendEphemeral: true, contextInfo: { mentionedJid: conn.parseMention(text), forwardingScore: 135,                 isForwarded: true ,"externalAdReply": {
+const andy = await conn.sendMessage(m.chat, buttonMessage, MessageType.buttonsMessage,  { quoted: freply, sendEphemeral: true, contextInfo: { mentionedJid: conn.parseMention(who), forwardingScore: 135,                 isForwarded: true ,"externalAdReply": {
           "title": `${pickRandom(['palpale','awokwkwkw','awikwok','duk tak duk'])}`,
           "body": `${pickRandom(['follow bang','© andyjavadams','Kok bisa bang','Waduh bang','Pencet lah'])}`,
           "mediaType": "1",
