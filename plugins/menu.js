@@ -211,7 +211,7 @@ const wit = moment.tz('Asia/Jayapura').format("HH:mm:ss")
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => ''+replace[name])
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => ''+replace[name])
 conn.fakeReply(m.chat, `tak loading, sek yh!!!`, '0@s.whatsapp.net','*Hadehhhhhhh*')
-await conn.send2ButtonImg(m.chat, text.trim(), `./src/hehe.jpg`, "© A N D Y - B O T Z", 'Donasi', '.ds', 'Script Bot', '.sc', { quoted: fvideo, sendEphemeral: true, contextInfo: { mentionedJid: conn.parseMention(text), forwardingScore: 135,                 isForwarded: true ,"externalAdReply": {
+await conn.send2ButtonImg(m.chat, text.trim(), `./cewe/${pickRandom(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q'])}.jpg`, `© A N D Y - B O T Z | Made Whit @${owner[0]}`, 'Donasi', '.ds', 'Script Bot', '.sc', { quoted: fvideo, sendEphemeral: true, contextInfo: { mentionedJid: conn.parseMention(text), forwardingScore: 135,                 isForwarded: true ,"externalAdReply": {
           "title": `${pickRandom(['palpale','awokwkwkw','awikwok','duk tak duk'])}`,
           "body": `${pickRandom(['follow bang','© andyjavadams','Kok bisa bang','Waduh bang','Pencet lah'])}`,
           "mediaType": "1",

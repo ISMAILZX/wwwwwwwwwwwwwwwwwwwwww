@@ -6,11 +6,11 @@ let moment = require ('moment-timezone')
 let handler = async (m, { conn, usedPrefix }) => {
 let name = m.fromMe ? conn.user : conn.contacts[m.sender]
 let { limit, exp, money, lastclaim, registered, regTime, role, age, level } = global.DATABASE.data.users[m.sender]
-let tag = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 const wib = moment.tz('Asia/Jakarta').format("HH:mm:ss")
 const wita = moment.tz('Asia/Makassar').format("HH:mm:ss")
 const wit = moment.tz('Asia/Jayapura').format("HH:mm:ss")
-
+//let oy = `@${tag.replace(/@.+/, '')}`
+//let own = `@${owner[0]}`
 const freply = {
   key: {
   participant: '0@s.whatsapp.net',
@@ -38,16 +38,17 @@ const buttons = [
    {buttonId: '/wip', buttonText: {displayText: 'info'}, type: 1}*/
 ]
 const buttonMessage = {
-    contentText: `\`\`\`Hi, ${ucapan()} ${ucapin()} @${tag.replace(/@.+/, '')} ✨\`\`\`
+    contentText: `\`\`\`Hi ${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}, ${ucapan()} ${ucapin()}\`\`\`
 
 \`\`\`NOTE - BOT TIDAK AKAN MERESPON DI DALAM GRUP JIKA PESAN SEMENTARA TIDAK DIMATIKAN.\`\`\``,
-    footerText: `sekarang jam\n\n${wib} WIB\n${wita} WITA\n${wit} WIT\n\n© A N D Y - B O T Z | Made Whit @${owner[0]}`,
+    footerText: `sekarang jam\n\n${wib} WIB\n${wita} WITA\n${wit} WIT\n\n© A N D Y - B O T Z | Made Whit *_@_andy.offc_*`,
     buttons: buttons,
     headerType: 4, // change for file type
     imageMessage: media.message.imageMessage // change for file type
 }
 
-const andy = await conn.sendMessage(m.chat, buttonMessage, MessageType.buttonsMessage,  { quoted: freply, sendEphemeral: true, contextInfo: { mentionedJid: conn.parseMention(tag), forwardingScore: 135,                 isForwarded: true ,"externalAdReply": {
+const andy = await conn.sendMessage(m.chat, buttonMessage, MessageType.buttonsMessage, { sendEphemeral: true, quoted: freply, contextInfo: { forwardingScore: 899,
+                isForwarded: true ,"externalAdReply": {
           "title": `${pickRandom(['palpale','awokwkwkw','awikwok','duk tak duk'])}`,
           "body": `${pickRandom(['follow bang','© andyjavadams','Kok bisa bang','Waduh bang','Pencet lah'])}`,
           "mediaType": "1",
