@@ -1,7 +1,15 @@
-let handler  = async (m, { conn, text }) => {
+/*let handler  = async (m, { conn, text }) => {
   let chats = conn.chats.all().filter(v => !v.read_only && v.message).map(v => v.jid)
   let content = await conn.cMod(m.chat, m, /bc|broadcast/i.test(text) ? text : text + '\n' + readMore + '')
   for (let id of chats) conn.copyNForward(id, content)
+  conn.reply(m.chat, `_Mengirim pesan broadcast ke ${chats.length} chat_`, m)
+}*/
+let fetch = require('node-fetch')
+let handler  = async (m, { conn, text }) => {
+  let thumb = 'https://telegra.ph/file/92b9ea9d9a08be254ff07.jpg'
+  let chats = conn.chats.all().filter(v => !v.read_only && v.message).map(v => v.jid)
+  let content = await conn.cMod(m.chat, m, /bc|broadcast/i.test(text) ? text : text )
+  for (let id of chats) conn.send2ButtonLoc(id, await (await fetch(thumb)).buffer(), `${text}`.trim(), `all brotkes || Made whit @${owner[0]}`, 'Menu', '.huh', 'Donasi', '.ds')
   conn.reply(m.chat, `_Mengirim pesan broadcast ke ${chats.length} chat_`, m)
 }
 handler.help = ['broadcast','bc'].map(v => v + ' <teks>')
