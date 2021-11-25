@@ -139,7 +139,7 @@ const wit = moment.tz('Asia/Jayapura').format("HH:mm:ss")
     }
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || `
-❕ *INFO*  : kini bot menjual nomor OTP canada, ketik *.toko* untuk melihat produk lainnya.
+❕ *INFO*  : Jika ingin Premium Subscribe Channel Youtube Saya.
 
          \`\`\`${oy} 🗿\`\`\`
 
@@ -154,7 +154,7 @@ _*Ismail Kurama*_
     let header = conn.menu.header || '┍━ *_「 %category 」_*'
     let body   = conn.menu.body   || '\`\`\`│ %cmd%islimit\`\`\`'
     let footer = conn.menu.footer || '┕━━━━━\n'
-    let after  = conn.menu.after  || '🗿'
+    let after  = conn.menu.after  || 'Jangan Lupa Bahagia'
     let _text  = before + '\n'
     for (let tag in groups) {
       _text += header.replace(/%category/g, tags[tag]) + '\n'
@@ -182,7 +182,7 @@ _*Ismail Kurama*_
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => ''+replace[name])
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => ''+replace[name])
-conn.fakeReply(m.chat, `tak loading, sek yh!!!`, '0@s.whatsapp.net','*Hadehhhhhhh*')
+conn.fakeReply(m.chat, `tak loading, sek yh!!!`, '0@s.whatsapp.net','*YT:Ismail Kurama*')
 await conn.send2ButtonImg(m.chat, text.trim(), `./cewe/${pickRandom(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q'])}.jpg`, `© Ismail Kurama | Made Whit @${owner[0]}`, 'Donasi', '.ds', 'Script Bot', '.sc', { quoted: fvideo, sendEphemeral: true, contextInfo: { mentionedJid: conn.parseMention(text), forwardingScore: 135,                 isForwarded: true ,"externalAdReply": {
           "title": `${pickRandom(['palpale','awokwkwkw','awikwok','duk tak duk'])}`,
           "body": `${pickRandom(['follow bang','© Ismail_Kurama','Kok bisa bang','Waduh bang','Pencet lah'])}`,
@@ -212,7 +212,7 @@ await conn.send2ButtonImg(m.chat, text.trim(), `./cewe/${pickRandom(['a','b','c'
 }}}) */
 
   } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    conn.reply(m.chat, 'Menu Emmror Karna Lagi Pake Kuota Gratisan Axis Gaming', m)
     throw e
   }
 }
