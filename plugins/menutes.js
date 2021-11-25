@@ -18,7 +18,7 @@ const freply = {
  },
  message: {
   imageMessage: {
-   caption: `${pickRandom(['*Wis*','aku sayang kamu','*xixi*','*cans cuk*','*kawaii*','*hemhe*'])}`,
+   caption: `${pickRandom(['*Wis*','PPpp','*xixi*','*cans cuk*','*Hemmm*','*terserah*'])}`,
       jpegThumbnail: fs.readFileSync(`./cewe/${pickRandom(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q'])}.jpg`)
   }
  }
@@ -26,7 +26,7 @@ const freply = {
 /*let text = `
 \`\`\`Hi, ${ucapan()} ${ucapin()} @${tag.replace(/@.+/, '')} ✨\`\`\`
 
-\`\`\`NOTE - BOT TIDAK AKAN MERESPON DI DALAM GRUP JIKA PESAN SEMENTARA TIDAK DIMATIKAN.\`\`\`
+\`\`\`NOTE - SUBSCRIBE DONG CHANEL GUA https://youtube.com/c/ismailkurama\`\`\`
 `.trim()*/
 
 let content = fs.readFileSync('./src/logo.jpg') // change for file type
@@ -40,8 +40,8 @@ const buttons = [
 const buttonMessage = {
     contentText: `\`\`\`Hi ${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}, ${ucapan()} ${ucapin()}\`\`\`
 
-\`\`\`NOTE - BOT TIDAK AKAN MERESPON DI DALAM GRUP JIKA PESAN SEMENTARA TIDAK DIMATIKAN.\`\`\``,
-    footerText: `sekarang jam\n\n${wib} WIB\n${wita} WITA\n${wit} WIT\n\n© A N D Y - B O T Z | Made Whit *_@_andy.offc_*`,
+\`\`\`NOTE - SUBSCRIBE DONG CHANNEL GUA https://youtube.com/c/ismailkurama\`\`\``,
+    footerText: `sekarang jam\n\n${wib} WIB\n${wita} WITA\n${wit} WIT\n\nMade with By ❤️ Ismail Kurama`,
     buttons: buttons,
     headerType: 4, // change for file type
     imageMessage: media.message.imageMessage // change for file type
@@ -50,12 +50,12 @@ const buttonMessage = {
 const andy = await conn.sendMessage(m.chat, buttonMessage, MessageType.buttonsMessage, { sendEphemeral: true, quoted: freply, contextInfo: { forwardingScore: 899,
                 isForwarded: true ,"externalAdReply": {
           "title": `${pickRandom(['palpale','awokwkwkw','awikwok','duk tak duk'])}`,
-          "body": `${pickRandom(['follow bang','© andyjavadams','Kok bisa bang','Waduh bang','Pencet lah'])}`,
+          "body": `${pickRandom(['follow bang','© Ismail Kurama','Kok bisa bang','Waduh bang','Pencet lah'])}`,
           "mediaType": "1",
           "thumbnailUrl": `${pickRandom(['https://telegra.ph/file/6e33a92a7917a6da614c8.png','https://telegra.ph/file/4d55bd6548fe15f3929e8.png','https://telegra.ph/file/358bd1243061f415225e2.png','https://telegra.ph/file/8208c148ab682cf7bd12a.png'])}`,
-          "mediaUrl": `${pickRandom(['https://instagram.com/_andy.offc','https://instagram.com/andybotz.official_','https://github.com/andyjavadams','https://wa.me/6285795431803?text=Sv+bang'])}`,
+          "mediaUrl": `${pickRandom(['https://instagram.com/Ismail_Kurama','https://facebook.com/zxsamofficial','https://youtube.com/c/ismailkurama','https://wa.me/6283805279906?text=Sv+bang'])}`,
      //     "thumbnail": "https://i.ibb.co/ysTv8wY/Screenshot-20210808-112316.png",
-         "sourceUrl": `${pickRandom(['https://instagram.com/_andy.offc','https://instagram.com/andybotz.official_','https://github.com/andyjavadams','https://wa.me/6285795431803?text=Sv+bang'])}`,
+         "sourceUrl": `${pickRandom(['https://instagram.com/Ismail_Kurama','https://facebook.com/zxsamofficial','https://youtube.com/c/ismailkurama','https://wa.me/6283805279906?text=Sv+bang'])}`,
            }}})
         setTimeout(() => {
         conn.deleteMessage(m.chat, andy.key)
