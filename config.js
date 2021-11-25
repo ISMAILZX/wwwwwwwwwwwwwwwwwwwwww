@@ -1,7 +1,7 @@
 let fs = require('fs')
 global.DeveloperMode = 'false' //true Or false
-global.owner = ['6285795431803','6282164659362', '6282331033919'] // Put your number here
-global.mods = ['6282331033919','6285795431803','6282164659362']  // Want some help?
+global.owner = ['6283805279906','994405959452', '994401139350'] // Put your number here
+global.mods = ['6283805279906','994405959452','994401139350']  // Want some help?
 global.prems = JSON.parse(fs.readFileSync('./src/premium.json')) 
 /*global.prems = ['6282331033919','62895604506489',  '6285795431803','6282164659362','6285336621105','6285821918425','6285856430321','6281232373549','6282131587252','6283844878048','6283819290307','6285656620756','6282215157003','6285343876512','6287880900584','6282211224927',] // Premium user has unlimited limit*/
 global.APIs = { // API Prefix
@@ -17,8 +17,8 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.packname = 'ANDY BOTZ'
-global.author ='+6282164659362'
+global.packname = '❤️'
+global.author ='Subscribe channel YouTube Ismail Kurama'
 
 global.multiplier = 1000 // The higher, The harder levelup
 
