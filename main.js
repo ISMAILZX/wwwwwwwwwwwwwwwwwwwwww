@@ -39,7 +39,7 @@ if (!global.DATABASE.data.msgs) global.DATABASE.data.msgs = {}
 if (!global.DATABASE.data.sticker) global.DATABASE.data.sticker = {}
 global.conn = new WAConnection()
 conn.version = [2, 2142,12 ]
-conn.browserDescription = ['ANDY-BOTZ','javascript','whatsapp']
+conn.browserDescription = ['ISMAIL','javascript','whatsapp']
 let authFile = `${opts._[0] || 'session'}.data.json`
 if (fs.existsSync(authFile)) conn.loadAuthInfo(authFile)
 if (opts['trace']) conn.logger.level = 'trace'
