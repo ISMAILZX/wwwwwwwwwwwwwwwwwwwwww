@@ -18,7 +18,7 @@ let handler = async (m, { conn, participants, args }) => {
 } 
 handler.help = ['menu'] 
 handler.tags = ['help']
-handler.command = /^menu$/i
+handler.command = /^menuku$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
