@@ -1,9 +1,9 @@
 let handler = async (m, { conn, usedPrefix, command }) => {
   await conn.sendButton(m.chat, `“${pickRandom(global.bucin)}”`, watermark, 'Quotes', `${usedPrefix + command}`)
 }
-handler.help = ['quotes']
-handler.tags = ['story']
-handler.command = /^(story)$/i
+handler.help = ['story','kata','kata-kata']
+handler.tags = ['quotes']
+handler.command = /^(story|stori)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
