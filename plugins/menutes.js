@@ -26,7 +26,7 @@ const freply = {
 /*let text = `
 \`\`\`Hi, ${ucapan()} ${ucapin()} @${tag.replace(/@.+/, '')} ✨\`\`\`
 
-\`\`\`NOTE - SUBSCRIBE DONG CHANEL GUA https://youtube.com/c/ismailkurama\`\`\`
+\`\`\`NOTE - SUBSCRIBE DONG CHANNEL OWNER https://youtube.com/c/ismailkurama\`\`\`
 `.trim()*/
 
 let content = fs.readFileSync('./src/logo.jpg') // change for file type
@@ -34,7 +34,8 @@ const media = await conn.prepareMessage(m.chat, content, MessageType.image, { th
 
 const buttons = [
   {buttonId: `${usedPrefix}` + 'huh', buttonText: {displayText: 'Menu️'}, type: 1},
-  {buttonId: `${usedPrefix}` + 'owner', buttonText: {displayText: 'Owner'}, type: 1}/*,
+  {buttonId: `${usedPrefix}` + 'all', buttonText: {displayText: '🗿'}, type: 1},
+  {buttonId: `${usedPrefix}` + 'qw', buttonText: {displayText: 'Owner'}, type: 1}/*,
    {buttonId: '/wip', buttonText: {displayText: 'info'}, type: 1}*/
 ]
 const buttonMessage = {
