@@ -58,7 +58,7 @@ function button(teks, user) {
     
     const buttonMessage = {
         contentText: teks,
-        footerText: '© A N D Y - B O T Z',
+        footerText: '© Ismail Kurama',
         buttons: buttons,
         headerType: 1
     }
