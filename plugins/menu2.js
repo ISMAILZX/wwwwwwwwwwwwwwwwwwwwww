@@ -9,6 +9,22 @@ let handler = async (m, { conn, participants, args }) => {
         {title: 'scbot', description: "mau bang", rowId:"/sc"},
         {title: 'ping', description: "tes", rowId:"/pg"},
         {title: 'groupbot', description: "hm", rowId:"/gb"},
+        {title: 'menu', description: "saya pengen lihat", rowId:".huh"},
+        {title: 'owner', description: "Owner nya siapa?", rowId:"/qw"},
+        {title: 'toko', description: "cek toko", rowId:"/tkk"},
+        {title: 'donasi', description: "saya mau donasi", rowId:"/ds"},
+        {title: 'info', description: "hehe:v", rowId:"/in"},
+        {title: 'scbot', description: "mau bang", rowId:"/sc"},
+        {title: 'ping', description: "tes", rowId:"/pg"},
+        {title: 'groupbot', description: "hm", rowId:"/gb"},
+        {title: 'menu', description: "saya pengen lihat", rowId:".huh"},
+        {title: 'owner', description: "Owner nya siapa?", rowId:"/qw"},
+        {title: 'toko', description: "cek toko", rowId:"/tkk"},
+        {title: 'donasi', description: "saya mau donasi", rowId:"/ds"},
+        {title: 'info', description: "hehe:v", rowId:"/in"},
+        {title: 'scbot', description: "mau bang", rowId:"/sc"},
+        {title: 'ping', description: "tes", rowId:"/pg"},
+        {title: 'groupbot', description: "hm", rowId:"/gb"},
     ]
     
     const sections = [{title: "Pilih salah satu", rows: rows}]
@@ -23,7 +39,7 @@ let handler = async (m, { conn, participants, args }) => {
 } 
 handler.help = ['menu'] 
 handler.tags = ['help']
-handler.command = /^waduhhhhhhhhhh$/i
+handler.command = /^all$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
