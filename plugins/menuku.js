@@ -16,8 +16,8 @@ let handler = async (m, { conn, participants, args }) => {
     
     await conn.sendMessage(m.chat, button, MessageType.listMessage)
 } 
-handler.help = ['menu'] 
-handler.tags = ['help']
+handler.help = ['menuku','gabut'] 
+handler.tags = ['main']
 handler.command = /^menuku$/i
 handler.owner = false
 handler.mods = false
