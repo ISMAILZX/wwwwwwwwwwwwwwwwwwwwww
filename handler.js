@@ -787,14 +787,14 @@ Untuk mematikan fitur ini, ketik
 
 global.dfail = (type, m, conn) => {
   let msg = {
-    rowner: 'ga boleh bang, kalo gitu lagi saya benet',
-    owner: 'ga boleh bang, kalo gitu lagi saya benet',
-    mods: 'Hayoloh mau ngapain, kata fita ndak bole',
-    premium: 'Perintah ini hanya dapat di gunakan oleh user *premium* \n\nMau daftar premium? ketik *.goprem*',
-    group: 'Harus didalam grup sayang',
-    private: 'Chat pribadi aja sayang',
-    admin: 'Jadi admin dulu, baru bisa pake fitur ini sayang',
-    botAdmin: 'Jadiin bot admin sayang, kan mau pake fitur ini',
+    rowner: 'ga boleh gitu, kalo begitu lagi saya juga gitu',
+    owner: 'ga boleh kakak, jngn di ulang ya',
+    mods: 'Hayoloh mau ngapain, kata aku ndak bole',
+    premium: 'kanggo anu *premium* \n\nhoyong premium sok ketik *.goprem*',
+    group: 'Harus didalam grup kak',
+    private: 'Chat pribadi aja kak',
+    admin: 'Jadi admin dulu, baru bisa pake fitur ini 🗿',
+    botAdmin: 'Jadiin bot admin kak, kan mau pake fitur ini',
     nsfw: 'Mode NSFW tidak aktif. Hanya pemilik bot yang bisa mengaktifkannya'
   }[type]
   if (msg) return m.reply(msg)
