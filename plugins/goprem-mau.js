@@ -6,7 +6,7 @@ K E T E R A N G A N
 anda! anda dapat mendownload ytmp3-ytmp4-play dll
 sepuasnya! Hingga masa berlaku premium habis!`.trim()
 
-conn.send2Button(m.chat, prem.trim(), '© A N D Y - B O T Z', 'Harganya', '.piro', 'Oh', '.okelah', { sendEphemeral: true, quoted: m })}
+conn.send2Button(m.chat, prem.trim(), '© Ismail Kurama', 'Harganya', '.piro', 'Oh', '.okelah', { sendEphemeral: true, quoted: m })}
 
 handler.command = /^(hooh)$/i
 
