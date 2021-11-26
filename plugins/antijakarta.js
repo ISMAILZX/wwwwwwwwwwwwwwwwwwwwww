@@ -2,14 +2,14 @@ let { Presence } = require('@adiwajshing/baileys')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 	if(!args || !args[0]) {
 		await conn.updatePresence(m.chat, Presence.composing) 
-		conn.send2Button(m.chat, 'Hayoloh', '© A N D Y - B O T Z', 'on', '.antijakarta andylov', 'off', '.antijakarta lovandy',m)
-	} else if(args[0] == 'andylov') {
+		conn.send2Button(m.chat, 'Hayoloh', '© Ismail Kurama', 'on', '.antijakarta IsmL', 'off', '.antijakarta Ismail',m)
+	} else if(args[0] == 'IsmL') {
 		let cek = global.DATABASE._data.chats[m.chat].nojakarta
 	if(cek) return conn.reply(m.chat, `*Anti-Jakarta telah aktif pada grup ini.*`, m)
 		await conn.updatePresence(m.chat, Presence.composing) 
 		global.DATABASE._data.chats[m.chat].nojakarta = true
 		conn.reply(m.chat, `*Anti-Jakarta berhasil diaktifkan.*`, m)
-	} else if(args[0] == 'lovandy') {
+	} else if(args[0] == 'Ismail') {
 		let cek = global.DATABASE._data.chats[m.chat].nojakarta
 	if(!cek) return conn.reply(m.chat, `*Anti-Jakarta telah di nonaktifkan pada grup ini.*`, m)
 		await conn.updatePresence(m.chat, Presence.composing) 
@@ -17,7 +17,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 		conn.reply(m.chat, `*Anti-Jakarta berhasil di nonaktifkan.*`, m)
 	} else {
 		await conn.updatePresence(m.chat, Presence.composing) 
-		conn.send2Button(m.chat, 'Hayoloh', '© A N D Y - B O T Z', 'on', '.antijakarta andylov', 'off', '.antijakarta lovandy',m)
+		conn.send2Button(m.chat, 'Hayoloh', '© Ismail Kurama', 'on', '.antijakarta IsmL', 'off', '.antijakarta Ismail',m)
 	} 
 }
 handler.help = ['antijakarta']
