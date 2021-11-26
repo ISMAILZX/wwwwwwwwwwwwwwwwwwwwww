@@ -29,7 +29,7 @@ const freply = {
 \`\`\`NOTE - SUBSCRIBE DONG CHANNEL OWNER https://youtube.com/c/ismailkurama\`\`\`
 `.trim()*/
 
-let content = fs.readFileSync('./src/logo.jpg') // change for file type
+let content = fs.readFileSync('./src/download.png') // change for file type
 const media = await conn.prepareMessage(m.chat, content, MessageType.image, { thumbnail: Buffer.alloc(0) })// change for file type
 
 const buttons = [
